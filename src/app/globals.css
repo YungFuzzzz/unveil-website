@@ -1,15 +1,14 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'metropolisRegular';
-  src: url('/fonts/metropolis.regular.otf') format('opentype');
-  font-weight: normal;
+  font-family: 'nunitoSansRegular';
+  src: url('/fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+  font-weight: regular;
   font-style: normal;
 }
 
 @theme {
-  --font-sans: 'metropolisRegular';
-  --font-mono: 'metropolisRegular';
+  --font-sans: 'nunitoSansRegular';
 }
 
 :root {
