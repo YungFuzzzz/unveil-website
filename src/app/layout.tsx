@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Unveil",
   icons: {
-    icon: "/logo.svg", // Kan ook .svg of .ico zijn
+    icon: "/logo.svg",
   },
 };
 
