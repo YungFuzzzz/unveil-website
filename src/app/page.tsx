@@ -2,7 +2,7 @@ import "./globals.css";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[#252525] text-white">
       <nav className="flex items-center justify-between p-4 bg-#252525">
         <div className="flex items-center">
           <img src="/logo.svg" alt="Logo" className="h-13 ml-8 mr-16" />
@@ -373,7 +373,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="image-slider" className="mt-12 overflow-x-auto mt-31">
+      <section id="image-slider" className="mt-12 overflow-x-auto mb-28">
         <div className="flex gap-4 px-4">
           <img
             src="/image-slider.png"
@@ -412,6 +412,77 @@ export default function Home() {
           />
         </div>
       </section>
+
+      <footer className="w-full h-[500px] flex-shrink-0 bg-black text-white px-12 py-8">
+        <div className="flex justify-between h-full">
+          {/* Unveil beschrijving wrapper */}
+          <div className="flex flex-col space-y-6">
+            {/* Logo */}
+            <img
+              src="/unveil-logo.svg"
+              alt="Unveil Logo Group"
+              className="w-auto"
+            />
+            {/* Beschrijving */}
+            <p className="max-w-sm">
+              Uncover the secrets of Mechelen with Unveil - the ultimate way to
+              sightsee and explore like a local!
+            </p>
+            {/* Download images */}
+            <div className="flex space-x-4">
+              <img
+                src="/app-store.png"
+                alt="Download on the App Store"
+                className="w-auto h-10"
+              />
+              <img
+                src="/play-store.png"
+                alt="Download on the Playstore"
+                className="w-auto h-10"
+              />
+            </div>
+          </div>
+
+          {/* Rechter kolom met drie divs */}
+          <div className="flex space-x-16">
+            <div className="flex flex-col space-y-2">
+              <h3 className="font-bold">Unveil</h3>
+              <ul className="space-y-1">
+                <li>Home</li>
+                <li>About us</li>
+                <li>Destinations</li>
+                <li>Blog</li>
+                <li>FAQ&apos;s</li>
+                <li>Unveil City App</li>
+              </ul>
+            </div>
+            <div className="flex flex-col space-y-2">
+              <h3 className="font-bold">Quick links</h3>
+              <ul className="space-y-1">
+                <li>Legal Notice</li>
+                <li>Privacy</li>
+                <li>Cookie Policy</li>
+                <li>Ethical</li>
+                <li>Need Help? Connect With Us Instantly!</li>
+                <li>How to delete my account</li>
+              </ul>
+            </div>
+            <div className="flex flex-col space-y-2">
+              <h3 className="font-bold">Socials</h3>
+              <ul className="space-y-1">
+                <li>Instagram</li>
+                <li>Facebook</li>
+                <li>TikTok</li>
+                <li>Linkedin</li>
+                <li>YouTube</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className=" text-center w-full bg-black">
+          Unveil Thomas More Mechelen | @Team Unveil
+        </div>
+      </footer>
     </div>
   );
 }
