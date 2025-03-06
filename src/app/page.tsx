@@ -342,7 +342,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
           <h1 className="text-7xl md:text-6xl font-bold text-white">
-          Take a closer look
+            Take a closer look
           </h1>
           <button
             className="mt-6 px-6 py-3 rounded-md text-white font-bold flex items-center"
@@ -353,6 +353,65 @@ export default function Home() {
           </button>
         </div>
       </div>
+
+      <section id="download" className="mt-12 flex flex-col items-center">
+        <div className="flex items-center justify-center mt-8 space-x-[150px]">
+          {/* Smartphone mockup */}
+          <div
+            className="w-[518px] h-[1022px] bg-cover bg-center"
+            style={{ backgroundImage: "url(/audio-screen.png)" }}
+          />
+          {/* Rechter QR code met titel */}
+          <div className="flex flex-col items-center">
+            <h3 className="text-white text-center font-nunito text-6xl font-bold leading-tight mb-32">
+              Download Now
+            </h3>
+            <div
+              className="w-[391px] h-[391px] rounded-[27px] bg-cover bg-center"
+              style={{ backgroundImage: "url(/qr-code.png)" }}
+            />
+          </div>
+        </div>
+      </section>
+      <section id="image-slider" className="mt-12 overflow-x-auto mt-31">
+        <div className="flex gap-4 px-4">
+          <img
+            src="/image-slider.png"
+            alt="Image 1"
+            className="w-[204.88px] h-[204.88px] flex-shrink-0 rounded-[25px]"
+          />
+          <img
+            src="/image-slider.png"
+            alt="Image 2"
+            className="w-[204.88px] h-[204.88px] flex-shrink-0 rounded-[25px]"
+          />
+          <img
+            src="/image-slider.png"
+            alt="Image 3"
+            className="w-[204.88px] h-[204.88px] flex-shrink-0 rounded-[25px]"
+          />
+          <img
+            src="/image-slider.png"
+            alt="Image 4"
+            className="w-[204.88px] h-[204.88px] flex-shrink-0 rounded-[25px]"
+          />
+          <img
+            src="/image-slider.png"
+            alt="Image 5"
+            className="w-[204.88px] h-[204.88px] flex-shrink-0 rounded-[25px]"
+          />
+          <img
+            src="/image-slider.png"
+            alt="Image 6"
+            className="w-[204.88px] h-[204.88px] flex-shrink-0 rounded-[25px]"
+          />
+          <img
+            src="/image-slider.png"
+            alt="Image 7"
+            className="w-[204.88px] h-[204.88px] flex-shrink-0 rounded-[25px]"
+          />
+        </div>
+      </section>
     </div>
   );
 }
