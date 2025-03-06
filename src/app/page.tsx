@@ -5,11 +5,11 @@ export default function Home() {
     <div className="min-h-screen bg-black text-white">
       <nav className="flex items-center justify-between p-4 bg-#252525">
         <div className="flex items-center">
-          <img src="/logo-expanded.svg" alt="Logo" className="h-8 mr-16" />
+          <img src="/logo.svg" alt="Logo" className="h-13 ml-8 mr-16" />
           <ul className="flex space-x-12">
             <li>
               <a href="#tours" className="hover-underline-animation font-bold">
-                TOURS
+                Tours
               </a>
             </li>
             <li>
@@ -17,7 +17,7 @@ export default function Home() {
                 href="#how-it-works"
                 className="hover-underline-animation font-bold"
               >
-                HOW IT WORKS
+                How it works
               </a>
             </li>
             <li>
@@ -25,7 +25,7 @@ export default function Home() {
                 href="#reviews"
                 className="hover-underline-animation font-bold"
               >
-                REVIEWS
+                Reviews
               </a>
             </li>
             <li>
@@ -33,12 +33,12 @@ export default function Home() {
                 href="#trip-planner"
                 className="hover-underline-animation font-bold"
               >
-                TRIP PLANNER
+                Trip Planner
               </a>
             </li>
             <li>
               <a href="#faq" className="hover-underline-animation font-bold">
-                FAQ
+                Faq
               </a>
             </li>
             <li>
@@ -46,13 +46,13 @@ export default function Home() {
                 href="#contact"
                 className="hover-underline-animation font-bold"
               >
-                CONTACT
+                Contact
               </a>
             </li>
           </ul>
         </div>
         <button
-          className="px-4 py-2 rounded-md text-white font-bold"
+          className="px-4 mr-10 py-2 rounded-md text-white font-bold"
           style={{ backgroundColor: "#5CD4FF" }}
         >
           Unveil App
@@ -70,11 +70,11 @@ export default function Home() {
           <h1 className="text-4xl md:text-6xl font-bold">
             Listen, Discover, Experience
           </h1>
-          <h3 className="text-xl md:text-2xl mt-4">
+          <h3 className="text-xl md:text-2xl mt-6">
             Explore Mechelen at your own pace
           </h3>
           <button
-            className="mt-6 px-6 py-3 rounded-md text-white font-bold"
+            className="mt-16 px-6 py-3 rounded-md text-white font-bold"
             style={{ backgroundColor: "#5CD4FF" }}
           >
             Discover Now
