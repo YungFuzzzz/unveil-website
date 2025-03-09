@@ -414,7 +414,7 @@ export default function Home() {
       </section>
 
       <footer className="w-full h-[500px] flex-shrink-0 bg-black text-white px-12 py-8">
-        <div className="flex justify-between h-full">
+        <div className="flex flex-start h-full gap-28 pt-16">
           {/* Unveil beschrijving wrapper */}
           <div className="flex flex-col space-y-6">
             {/* Logo */}
@@ -428,26 +428,26 @@ export default function Home() {
               Uncover the secrets of Mechelen with Unveil - the ultimate way to
               sightsee and explore like a local!
             </p>
-            {/* Download images */}
+            {/* Download images */} 
             <div className="flex space-x-4">
               <img
                 src="/app-store.png"
                 alt="Download on the App Store"
-                className="w-auto h-10"
+                className="w-auto h-13"
               />
               <img
                 src="/play-store.png"
                 alt="Download on the Playstore"
-                className="w-auto h-10"
+                className="w-auto h-13"
               />
             </div>
           </div>
 
           {/* Rechter kolom met drie divs */}
-          <div className="flex space-x-16">
-            <div className="flex flex-col space-y-2">
-              <h3 className="font-bold">Unveil</h3>
-              <ul className="space-y-1">
+          <div className="flex space-x-19">
+            <div className="flex flex-col space-y-2 mr-38">
+              <h3 className="font-bold mb-6">Unveil</h3>
+              <ul className="space-y-2">
                 <li>Home</li>
                 <li>About us</li>
                 <li>Destinations</li>
@@ -456,20 +456,22 @@ export default function Home() {
                 <li>Unveil City App</li>
               </ul>
             </div>
-            <div className="flex flex-col space-y-2">
-              <h3 className="font-bold">Quick links</h3>
-              <ul className="space-y-1">
+            <div className="flex flex-col space-y-2 mr-38">
+              <h3 className="font-bold mb-6">Quick links</h3>
+              <ul className="space-y-2">
                 <li>Legal Notice</li>
                 <li>Privacy</li>
                 <li>Cookie Policy</li>
                 <li>Ethical</li>
-                <li>Need Help? Connect With Us Instantly!</li>
+                <li>
+                  Need Help? Connect With Us <br /> Instantly!
+                </li>
                 <li>How to delete my account</li>
               </ul>
             </div>
-            <div className="flex flex-col space-y-2">
-              <h3 className="font-bold">Socials</h3>
-              <ul className="space-y-1">
+            <div className="flex flex-col space-y-2 mr-38">
+              <h3 className="font-bold mb-6">Socials</h3>
+              <ul className="space-y-2">
                 <li>Instagram</li>
                 <li>Facebook</li>
                 <li>TikTok</li>
@@ -479,7 +481,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className=" text-center w-full bg-black">
+        <div className="font-bold text-center w-full bg-black">
           Unveil Thomas More Mechelen | @Team Unveil
         </div>
       </footer>
