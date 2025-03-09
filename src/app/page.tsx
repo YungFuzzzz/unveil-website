@@ -376,39 +376,39 @@ export default function Home() {
       <section id="image-slider" className="mt-12 overflow-x-auto mb-28">
         <div className="flex gap-4 px-4">
           <img
-            src="/image-slider.png"
-            alt="Image 1"
-            className="w-[204.88px] h-[204.88px] flex-shrink-0 rounded-[25px]"
+        src="/image-slider.png"
+        alt="Image 1"
+        className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
           />
           <img
-            src="/image-slider.png"
-            alt="Image 2"
-            className="w-[204.88px] h-[204.88px] flex-shrink-0 rounded-[25px]"
+        src="/image-slider.png"
+        alt="Image 2"
+        className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
           />
           <img
-            src="/image-slider.png"
-            alt="Image 3"
-            className="w-[204.88px] h-[204.88px] flex-shrink-0 rounded-[25px]"
+        src="/image-slider.png"
+        alt="Image 3"
+        className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
           />
           <img
-            src="/image-slider.png"
-            alt="Image 4"
-            className="w-[204.88px] h-[204.88px] flex-shrink-0 rounded-[25px]"
+        src="/image-slider.png"
+        alt="Image 4"
+        className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
           />
           <img
-            src="/image-slider.png"
-            alt="Image 5"
-            className="w-[204.88px] h-[204.88px] flex-shrink-0 rounded-[25px]"
+        src="/image-slider.png"
+        alt="Image 5"
+        className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
           />
           <img
-            src="/image-slider.png"
-            alt="Image 6"
-            className="w-[204.88px] h-[204.88px] flex-shrink-0 rounded-[25px]"
+        src="/image-slider.png"
+        alt="Image 6"
+        className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
           />
           <img
-            src="/image-slider.png"
-            alt="Image 7"
-            className="w-[204.88px] h-[204.88px] flex-shrink-0 rounded-[25px]"
+        src="/image-slider.png"
+        alt="Image 7"
+        className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
           />
         </div>
       </section>
@@ -428,7 +428,7 @@ export default function Home() {
               Uncover the secrets of Mechelen with Unveil - the ultimate way to
               sightsee and explore like a local!
             </p>
-            {/* Download images */} 
+            {/* Download images */}
             <div className="flex space-x-4">
               <img
                 src="/app-store.png"
