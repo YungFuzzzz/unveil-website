@@ -5,16 +5,24 @@ export default function Home() {
     <div className="min-h-screen bg-[#252525] text-white">
       <nav className="flex items-center justify-between p-4 bg-#252525">
         <div className="flex items-center">
-          <img src="/logo.svg" alt="Logo" className="h-13 ml-8 mr-16" />
+          <img src="/Logo.svg" alt="Logo" className="h-13 ml-8 mr-16" />
           <ul className="flex space-x-12">
             <li>
-              <a href="#tours" className="hover-underline-animation font-bold">
-                Tours
+              <a href="#home" className="hover-underline-animation font-bold">
+                Home
               </a>
             </li>
             <li>
               <a
-                href="#how-it-works"
+                href="#about us"
+                className="hover-underline-animation font-bold"
+              >
+                About Us
+              </a>
+            </li>
+            <li>
+              <a
+                href="#how it works"
                 className="hover-underline-animation font-bold"
               >
                 How it works
@@ -22,18 +30,10 @@ export default function Home() {
             </li>
             <li>
               <a
-                href="#reviews"
+                href="#our tours"
                 className="hover-underline-animation font-bold"
               >
-                Reviews
-              </a>
-            </li>
-            <li>
-              <a
-                href="#trip-planner"
-                className="hover-underline-animation font-bold"
-              >
-                Trip Planner
+               Our Tours
               </a>
             </li>
             <li>
@@ -55,61 +55,66 @@ export default function Home() {
           className="px-4 mr-10 py-2 rounded-md text-white font-bold"
           style={{ backgroundColor: "#5CD4FF" }}
         >
-          Unveil App
+          Unveil app
         </button>
       </nav>
-
-      <div className="relative w-full">
-        <img
-          src="/hero-image.png"
-          alt="Hero"
-          className="w-full"
-          style={{ filter: "blur(5px)" }}
-        />
+      <div className="relative w-full h-screen overflow-hidden">
+  <video
+    src="/introVideo.mp4"
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute top-0 left-0 w-full h-full object-cover"
+    style={{ filter: "blur(0px)" }}
+  />
+  {/* Donkere overlay */}
+  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-          <h1 className="text-4xl md:text-6xl font-bold">
-            Listen, Discover, Experience
-          </h1>
-          <h3 className="text-xl md:text-2xl mt-6">
-            Explore Mechelen at your own pace
-          </h3>
+        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-center">
+  Listen, discover, experience
+</h1>
+
+<h3 className="text-2xl md:text-3xl mt-6">
+  Explore Mechelen at your own pace
+</h3>
+
           <button
             className="mt-16 px-6 py-3 rounded-md text-white font-bold"
-            style={{ backgroundColor: "#5CD4FF" }}
-          >
-            Discover Now
+            style={{ backgroundColor: "#5CD4FF" }}>
+            Discover now
           </button>
         </div>
       </div>
+<div className="text-center mt-16">
+  <h2 className="text-5xl font-bold mb-6">Our tours</h2>
+  <div className="flex justify-center mt-24 space-x-24">
+    <div className="w-1/3">
+      <img src="/tour1.svg" alt="Tour 1" className="w-full" />
+      <h3 className="text-2xl font-bold mt-8 text-left">
+        Mechelen & the Holocaust
+      </h3>
+      <p className="mt-4 text-left">
+        Discover the poignant stories of the Holocaust in Mechelen.
+        Experience history, honor the victims, and be moved by the power
+        of remembrance.
+      </p>
+    </div>
+    <div className="w-1/3">
+      <img src="/tour2.svg" alt="Tour 2" className="w-full" />
+      <h3 className="text-2xl font-bold mt-8 text-left">
+        The Dijle: Mirror of Mechelen
+      </h3>
+      <p className="mt-4 text-left">
+        From historic trade route to modern connector, discover how this
+        river has shaped and reflected the city&apos;s story through the ages.
+      </p>
+    </div>
+  </div>
+</div>
 
-      <div className="text-center mt-12">
-        <h2 className="text-4xl font-bold">Our Tours</h2>
-        <div className="flex justify-center mt-8 space-x-24">
-          <div className="w-1/3">
-            <img src="/tour1.svg" alt="Tour 1" className="w-full" />
-            <h3 className="text-2xl font-bold mt-4 text-left">
-              Mechelen & the Holocaust
-            </h3>
-            <p className="mt-2 text-left">
-              Discover the poignant stories of the Holocaust in Mechelen.
-              Experience history, honor the victims, and be moved by the power
-              of remembrance.
-            </p>
-          </div>
-          <div className="w-1/3">
-            <img src="/tour2.svg" alt="Tour 2" className="w-full" />
-            <h3 className="text-2xl font-bold mt-4 text-left">
-              The Dijle: Mirror of Mechelen
-            </h3>
-            <p className="mt-2 text-left">
-              From historic trade route to modern connector, discover how this
-              river has shaped and reflected the city's story through the ages.
-            </p>
-          </div>
-        </div>
-      </div>
 
-      <div className="relative w-full mt-12 px-4 md:px-12">
+      <div className="relative w-full mt-27 px-4 md:px-12">
         <img
           src="/wide-image.svg"
           alt="Wide Image"
@@ -121,7 +126,7 @@ export default function Home() {
             Explore Mechelen
           </h1>
           <button
-            className="mt-6 px-6 py-3 rounded-md text-white font-bold"
+            className="mt-12 px-6 py-3 rounded-md text-white font-bold"
             style={{ backgroundColor: "#5CD4FF" }}
           >
             Explore now
@@ -129,33 +134,33 @@ export default function Home() {
         </div>
       </div>
 
-      <section id="top-picks" className="mt-12 px-4">
+      <section id="top-picks" className="mt-19 px-12">
         <div className="text-center">
-          <h2 className="text-4xl font-bold">Unveil top picks</h2>
-          <p className="mt-4 text-lg">
+          <h2 className="text-5xl font-bold">Unveil top picks</h2>
+          <p className="mt-7 text-lg">
             Unveil Mechelen like never before: where surprises await, history
             comes alive, and every corner tells a unique story!
           </p>
         </div>
 
-        <div className="flex justify-center space-x-4 mt-6">
+        <div className="flex justify-center space-x-4 mt-11">
           <div className="rounded-lg bg-[#5CD4FF] flex w-[195.11px] h-[42px] justify-center items-center">
             Self-Guided Tour
           </div>
           <div className="rounded-lg bg-[#5CD4FF] flex w-[195.11px] h-[42px] justify-center items-center">
-            Mechelen & the Holocaust
+            The Holocaust
           </div>
           <div className="rounded-lg bg-[#5CD4FF] flex w-[195.11px] h-[42px] justify-center items-center">
             The Dijle
           </div>
         </div>
 
-        <div className="flex justify-center space-x-8 mt-12">
+        <div className="flex justify-center space-x-10 mt-12">
           {/* Card 1: Mechelen & the Holocaust */}
           <div
             style={{
               width: "421.33px",
-              height: "587.98px",
+              height: "620.98px",
               flexShrink: 0,
               borderRadius: "16px",
               background: "#444",
@@ -181,7 +186,7 @@ export default function Home() {
                 }}
                 className="w-auto max-w-full"
               >
-                <span className="text-black uppercase">Self-Guided Tour</span>
+                <span className="text-black">Self-Guided Tour</span>
               </div>
               <div className="flex items-center">
                 <img
@@ -204,10 +209,10 @@ export default function Home() {
               of remembrance.
             </p>
             <button
-              className="mt-4 px-6 py-2 rounded-md font-bold text-white uppercase"
+              className="mt-10 px-6 py-2 rounded-md font-bold text-white"
               style={{ backgroundColor: "#5CD4FF" }}
             >
-              Experience
+              Discover
             </button>
           </div>
 
@@ -215,7 +220,7 @@ export default function Home() {
           <div
             style={{
               width: "421.33px",
-              height: "587.98px",
+              height: "620.98px",
               flexShrink: 0,
               borderRadius: "16px",
               background: "#444",
@@ -241,7 +246,7 @@ export default function Home() {
                 }}
                 className="w-auto max-w-full"
               >
-                <span className="text-black uppercase">Self-Guided Tour</span>
+                <span className="text-black">Self-Guided Tour</span>
               </div>
               <div className="flex items-center">
                 <img
@@ -249,7 +254,7 @@ export default function Home() {
                   alt="Star"
                   className="w-4 h-4 mr-1"
                 />
-                <span>5.0</span>
+                <span>3.0</span>
               </div>
             </div>
             <h3 className="mt-4 text-2xl font-bold">
@@ -265,10 +270,10 @@ export default function Home() {
               ages.
             </p>
             <button
-              className="mt-4 px-6 py-2 rounded-md font-bold text-white uppercase"
+              className="mt-10 px-6 py-2 rounded-md font-bold text-white"
               style={{ backgroundColor: "#5CD4FF" }}
             >
-              Experience
+              Discover  
             </button>
           </div>
 
@@ -276,7 +281,7 @@ export default function Home() {
           <div
             style={{
               width: "421.33px",
-              height: "587.98px",
+              height: "620.98px",
               flexShrink: 0,
               borderRadius: "16px",
               background: "#444",
@@ -302,7 +307,7 @@ export default function Home() {
                 }}
                 className="w-auto max-w-full"
               >
-                <span className="text-black uppercase">Self-Guided Tour</span>
+                <span className="text-black">Self-Guided Tour</span>
               </div>
               <div className="flex items-center">
                 <img
@@ -310,45 +315,44 @@ export default function Home() {
                   alt="Star"
                   className="w-4 h-4 mr-1"
                 />
-                <span>5.0</span>
+                <span>4.0</span>
               </div>
             </div>
             <h3 className="mt-4 text-2xl font-bold">
-              The Monuments: Silent guardians of Mechelen
+              The Monuments of Mechelen
             </h3>
             <p className="500 mt-1" style={{ color: "#5CD4FF" }}>
               Mechelen
             </p>
             <p className="mt-2">
-              In the heart of Mechelen, the monuments rise as silent witnesses
-              to a rich past.
+             In the heart of Mechelen, the monuments stand tall, echoing centuries of history and shaping the city&apos;s identity through time.
             </p>
             <button
-              className="mt-4 px-6 py-2 rounded-md font-bold text-white uppercase"
+              className="mt-10 px-6 py-2 rounded-md font-bold text-white"
               style={{ backgroundColor: "#5CD4FF" }}
             >
-              Experience
+              Discover
             </button>
           </div>
         </div>
       </section>
 
-      <div className="relative w-full mt-12 px-4 md:px-12">
+      <div className="relative w-full mt-25 px-4 md:px-12">
         <img
           src="/closer-look.png"
           alt="Wide Image"
           className="w-full mx-auto rounded-md"
-          style={{ maxWidth: "calc(100% - 370px)" }}
+          style={{ maxWidth: "calc(104% - 370px)" }}
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
           <h1 className="text-7xl md:text-6xl font-bold text-white">
             Take a closer look
           </h1>
           <button
-            className="mt-6 px-6 py-3 rounded-md text-white font-bold flex items-center"
+            className="mt-12 px-6 py-3 rounded-md text-white font-bold flex items-center"
             style={{ backgroundColor: "#5CD4FF" }}
           >
-            Watch the Overview
+            Watch the overview
             <img src="/video-play.svg" alt="arrow" className="w-5 h-5 ml-2" />
           </button>
         </div>
@@ -364,7 +368,7 @@ export default function Home() {
           {/* Rechter QR code met titel */}
           <div className="flex flex-col items-center">
             <h3 className="text-white text-center font-nunito text-6xl font-bold leading-tight mb-32">
-              Download Now
+              Download now
             </h3>
             <div
               className="w-[391px] h-[391px] rounded-[27px] bg-cover bg-center"
@@ -376,37 +380,37 @@ export default function Home() {
       <section id="image-slider" className="mt-12 overflow-x-auto mb-28">
         <div className="flex gap-4 px-4">
           <img
-        src="/image-slider.png"
+        src="/image-slider1.png"
         alt="Image 1"
         className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
           />
           <img
-        src="/image-slider.png"
+        src="/image-slider2.png"
         alt="Image 2"
         className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
           />
           <img
-        src="/image-slider.png"
+        src="/image-slider3.png"
         alt="Image 3"
         className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
           />
           <img
-        src="/image-slider.png"
+        src="/image-slider4.png"
         alt="Image 4"
         className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
           />
           <img
-        src="/image-slider.png"
+        src="/image-slider5.png"
         alt="Image 5"
         className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
           />
           <img
-        src="/image-slider.png"
+        src="/image-slider6.png"
         alt="Image 6"
         className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
           />
           <img
-        src="/image-slider.png"
+        src="/image-slider7.png"
         alt="Image 7"
         className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
           />
@@ -425,9 +429,10 @@ export default function Home() {
             />
             {/* Beschrijving */}
             <p className="max-w-sm">
-              Uncover the secrets of Mechelen with Unveil - the ultimate way to
-              sightsee and explore like a local!
-            </p>
+  Uncover the secrets of Mechelen with Unveil.<br />
+  The ultimate way to sightsee and explore like a local!
+</p>
+
             {/* Download images */}
             <div className="flex space-x-4">
               <img
@@ -444,14 +449,14 @@ export default function Home() {
           </div>
 
           {/* Rechter kolom met drie divs */}
-          <div className="flex space-x-19">
+          <div className="flex space-x-39">
             <div className="flex flex-col space-y-2 mr-38">
               <h3 className="font-bold mb-6">Unveil</h3>
               <ul className="space-y-2">
                 <li>Home</li>
                 <li>About us</li>
-                <li>Destinations</li>
-                <li>Blog</li>
+                <li>How it works</li>
+                <li>Our tours</li>
                 <li>FAQ&apos;s</li>
                 <li>Unveil City App</li>
               </ul>
@@ -481,7 +486,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="font-bold text-center w-full bg-black">
+        <div className="font-light text-center w-full bg-black">
           Unveil Thomas More Mechelen | @Team Unveil
         </div>
       </footer>
