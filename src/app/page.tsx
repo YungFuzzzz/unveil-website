@@ -378,44 +378,18 @@ export default function Home() {
         </div>
       </section>
       <section id="image-slider" className="mt-12 overflow-x-auto mb-28">
-        <div className="flex gap-4 px-4">
-          <img
-        src="/image-slider1.png"
-        alt="Image 1"
+  <div className="flex justify-center gap-4 px-4">
+    {Array.from({ length: 7 }).map((_, index) => (
+      <img
+        key={index}
+        src={`/image-slider${index + 1}.png`}
+        alt={`Image ${index + 1}`}
         className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
-          />
-          <img
-        src="/image-slider2.png"
-        alt="Image 2"
-        className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
-          />
-          <img
-        src="/image-slider3.png"
-        alt="Image 3"
-        className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
-          />
-          <img
-        src="/image-slider4.png"
-        alt="Image 4"
-        className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
-          />
-          <img
-        src="/image-slider5.png"
-        alt="Image 5"
-        className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
-          />
-          <img
-        src="/image-slider6.png"
-        alt="Image 6"
-        className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
-          />
-          <img
-        src="/image-slider7.png"
-        alt="Image 7"
-        className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
-          />
-        </div>
-      </section>
+      />
+    ))}
+  </div>
+</section>
+
 
       <footer className="w-full h-[500px] flex-shrink-0 bg-black text-white px-12 py-8">
         <div className="flex flex-start h-full gap-28 pt-16">
