@@ -5,7 +5,8 @@ export default function Home() {
     <div className="min-h-screen bg-[#252525] text-white">
       <nav className="flex items-center justify-between p-4 bg-#252525">
         <div className="flex items-center">
-          <img src="/Logo.svg" alt="Logo" className="h-13 ml-8 mr-16" />
+        <a href="/"><img src="/Logo.svg" alt="Logo" className="h-13 ml-8 mr-16" /></a>
+
           <ul className="flex space-x-12">
             <li>
               <a href="#home" className="hover-underline-animation font-bold">
@@ -51,12 +52,11 @@ export default function Home() {
             </li>
           </ul>
         </div>
-        <button
-          className="px-4 mr-10 py-2 rounded-md text-white font-bold"
-          style={{ backgroundColor: "#5CD4FF" }}
-        >
-          Unveil app
-        </button>
+        <button className="px-4 mr-10 py-2 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out">
+  Unveil app
+</button>
+
+
       </nav>
       <div className="relative w-full h-screen overflow-hidden">
   <video
@@ -79,18 +79,17 @@ export default function Home() {
   Explore Mechelen at your own pace
 </h3>
 
-          <button
-            className="mt-16 px-6 py-3 rounded-md text-white font-bold"
-            style={{ backgroundColor: "#5CD4FF" }}>
-            Discover now
-          </button>
+<button className="mt-16 px-6 py-3 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out">
+  Discover now
+</button>
+
         </div>
       </div>
 <div className="text-center mt-16">
   <h2 className="text-5xl font-bold mb-6">Our tours</h2>
   <div className="flex justify-center mt-24 space-x-24">
     <div className="w-1/3">
-      <img src="/tour1.svg" alt="Tour 1" className="w-full" />
+      <img src="/tour1.1.svg" alt="Tour 1" className="w-full" />
       <h3 className="text-2xl font-bold mt-8 text-left">
         Mechelen & the Holocaust
       </h3>
@@ -101,7 +100,7 @@ export default function Home() {
       </p>
     </div>
     <div className="w-1/3">
-      <img src="/tour2.svg" alt="Tour 2" className="w-full" />
+      <img src="/tour2.1.svg" alt="Tour 2" className="w-full" />
       <h3 className="text-2xl font-bold mt-8 text-left">
         The Dijle: Mirror of Mechelen
       </h3>
