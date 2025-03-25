@@ -52,9 +52,10 @@ export default function Home() {
             </li>
           </ul>
         </div>
-        <button className="px-4 mr-10 py-2 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out">
+        <button className="px-4 mr-10 py-2 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer">
   Unveil app
 </button>
+
 
 
       </nav>
@@ -79,9 +80,10 @@ export default function Home() {
   Explore Mechelen at your own pace
 </h3>
 
-<button className="mt-16 px-6 py-3 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out">
+<button className="mt-16 px-6 py-3 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer">
   Discover now
 </button>
+
 
         </div>
       </div>
@@ -89,7 +91,7 @@ export default function Home() {
   <h2 className="text-5xl font-bold mb-6">Our tours</h2>
   <div className="flex justify-center mt-24 space-x-24">
     <div className="w-1/3">
-      <img src="/tour1.1.svg" alt="Tour 1" className="w-full" />
+      <img src="/tour1.2.svg" alt="Tour 1" className="w-full" />
       <h3 className="text-2xl font-bold mt-8 text-left">
         Mechelen & the Holocaust
       </h3>
@@ -100,7 +102,7 @@ export default function Home() {
       </p>
     </div>
     <div className="w-1/3">
-      <img src="/tour2.1.svg" alt="Tour 2" className="w-full" />
+      <img src="/tour2.2.svg" alt="Tour 2" className="w-full" />
       <h3 className="text-2xl font-bold mt-8 text-left">
         The Dijle: Mirror of Mechelen
       </h3>
@@ -125,11 +127,12 @@ export default function Home() {
             Explore Mechelen
           </h1>
           <button
-            className="mt-12 px-6 py-3 rounded-md text-white font-bold"
-            style={{ backgroundColor: "#5CD4FF" }}
-          >
-            Explore now
-          </button>
+  className="mt-12 px-6 py-3 rounded-md text-white font-bold bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer"
+>
+  Explore now
+</button>
+
+
         </div>
       </div>
 
@@ -143,15 +146,19 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center space-x-4 mt-11">
-          <div className="rounded-lg bg-[#5CD4FF] flex w-[195.11px] h-[42px] justify-center items-center">
-            Self-Guided Tour
-          </div>
-          <div className="rounded-lg bg-[#5CD4FF] flex w-[195.11px] h-[42px] justify-center items-center">
-            The Holocaust
-          </div>
-          <div className="rounded-lg bg-[#5CD4FF] flex w-[195.11px] h-[42px] justify-center items-center">
-            The Dijle
-          </div>
+        <div className="rounded-lg bg-[#5CD4FF] flex w-[195.11px] h-[42px] justify-center items-center font-bold text-white hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer">
+  Self-Guided Tour
+</div>
+
+
+<div className="rounded-lg bg-[#5CD4FF] flex w-[195.11px] h-[42px] justify-center items-center font-bold text-white hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer">
+  The Holocaust
+</div>
+
+<div className="rounded-lg bg-[#5CD4FF] flex w-[195.11px] h-[42px] justify-center items-center font-bold text-white hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer">
+  The Dijle
+</div>
+
         </div>
 
         <div className="flex justify-center space-x-10 mt-12">
@@ -208,11 +215,11 @@ export default function Home() {
               of remembrance.
             </p>
             <button
-              className="mt-10 px-6 py-2 rounded-md font-bold text-white"
-              style={{ backgroundColor: "#5CD4FF" }}
-            >
-              Discover
-            </button>
+  className="mt-10 px-6 py-2 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer"
+>
+  Discover
+</button>
+
           </div>
 
           {/* Card 2: The Dijle: Mirror of Mechelen */}
@@ -269,11 +276,11 @@ export default function Home() {
               ages.
             </p>
             <button
-              className="mt-10 px-6 py-2 rounded-md font-bold text-white"
-              style={{ backgroundColor: "#5CD4FF" }}
-            >
-              Discover  
-            </button>
+  className="mt-10 px-6 py-2 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer"
+>
+  Discover
+</button>
+
           </div>
 
           {/* Card 3: The Monuments: Silent guardians of Mechelen */}
@@ -327,11 +334,11 @@ export default function Home() {
              In the heart of Mechelen, the monuments stand tall, echoing centuries of history and shaping the city&apos;s identity through time.
             </p>
             <button
-              className="mt-10 px-6 py-2 rounded-md font-bold text-white"
-              style={{ backgroundColor: "#5CD4FF" }}
-            >
-              Discover
-            </button>
+  className="mt-10 px-6 py-2 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer"
+>
+  Discover
+</button>
+
           </div>
         </div>
       </section>
@@ -348,12 +355,18 @@ export default function Home() {
             Take a closer look
           </h1>
           <button
-            className="mt-12 px-6 py-3 rounded-md text-white font-bold flex items-center"
-            style={{ backgroundColor: "#5CD4FF" }}
-          >
-            Watch the overview
-            <img src="/video-play.svg" alt="arrow" className="w-5 h-5 ml-2" />
-          </button>
+  className="group mt-12 px-6 py-3 rounded-md text-white font-bold flex items-center bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer"
+>
+  Watch the overview
+  <img
+    src="/video-play.svg"
+    alt="arrow"
+    className="w-5 h-5 ml-2 transition-all duration-300 ease-in-out group-hover:brightness-0"
+  />
+</button>
+
+
+
         </div>
       </div>
 
