@@ -60,15 +60,22 @@ export default function Home() {
 
       </nav>
       <div className="relative w-full h-screen overflow-hidden">
-  <video
-    src="/introVideo.mp4"
-    autoPlay
-    loop
-    muted
-    playsInline
-    className="absolute top-0 left-0 w-full h-full object-cover"
-    style={{ filter: "blur(0px)" }}
-  />
+      <video
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="absolute top-0 left-0 w-full h-full object-cover"
+  preload="none"
+>
+  <source src="/introVideo.webm" type="video/webm" />
+  <source src="/introVideo.mp4" type="video/mp4" />
+  <p>Je browser ondersteunt geen video.</p>
+</video>
+
+
+
+
   {/* Donkere overlay */}
   <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
