@@ -89,7 +89,7 @@ export default function Home() {
             onClick={() => setSelectedTour('tour1')}
             className={`rounded-lg flex w-[195.11px] h-[42px] justify-center items-center font-bold cursor-pointer ${selectedTour === 'tour1' ? 'bg-white text-black' : 'bg-[#5CD4FF] text-white'}`}
           >
-            All Tours
+            All tours
           </button>
 
           {/* Knop 2 */}
@@ -156,7 +156,7 @@ export default function Home() {
                 <h3 className="mt-4 text-2xl font-bold">
                   Mechelen & the Holocaust
                 </h3>
-                <p className="500 mt-1" style={{ color: "#5CD4FF" }}>
+                <p className="500 mt-1" style={{ color: "#fffff" }}>
                   Mechelen
                 </p>
                 <p className="mt-2">
@@ -212,7 +212,7 @@ export default function Home() {
                 <h3 className="mt-4 text-2xl font-bold">
                   The Dijle: Mirror of Mechelen
                 </h3>
-                <p className="500 mt-1" style={{ color: "#5CD4FF" }}>
+                <p className="500 mt-1" style={{ color: "#fffff" }}>
                   Mechelen
                 </p>
                 <p className="mt-2">
@@ -268,7 +268,7 @@ export default function Home() {
                 <h3 className="mt-4 text-2xl font-bold">
                 The Monuments of Mechelen
                 </h3>
-                <p className="500 mt-1" style={{ color: "#5CD4FF" }}>
+                <p className="500 mt-1" style={{ color: "#fffff" }}>
                   Mechelen
                 </p>
                 <p className="mt-2">
@@ -327,7 +327,7 @@ export default function Home() {
               <h3 className="mt-4 text-2xl font-bold">
                 Mechelen & the Holocaust
               </h3>
-              <p className="500 mt-1" style={{ color: "#5CD4FF" }}>
+              <p className="500 mt-1" style={{ color: "#fffff" }}>
                 Mechelen
               </p>
               <p className="mt-2">
@@ -385,7 +385,7 @@ export default function Home() {
               <h3 className="mt-4 text-2xl font-bold">
                 The Dijle River Experience
               </h3>
-              <p className="500 mt-1" style={{ color: "#5CD4FF" }}>
+              <p className="500 mt-1" style={{ color: "#ffffff" }}>
                 Mechelen
               </p>
               <p className="mt-2">
@@ -414,6 +414,7 @@ export default function Home() {
             Take a closer look
           </h1>
           <button
+  onClick={() => window.open('/UnveilTrailer.webm', '_blank')}
   className="group mt-12 px-6 py-3 rounded-md text-white font-bold flex items-center bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer"
 >
   Watch the overview
@@ -423,6 +424,7 @@ export default function Home() {
     className="w-5 h-5 ml-2 transition-all duration-300 ease-in-out group-hover:brightness-0"
   />
 </button>
+
 
 
 
