@@ -114,7 +114,7 @@ export default function Home() {
         The Dijle: Mirror of Mechelen
       </h3>
       <p className="mt-4 text-left">
-        From historic trade route to modern connector, discover how this
+        From historical trade routes to modern connector, discover how this
         river has shaped and reflected the city&apos;s story through the ages.
       </p>
     </div>
@@ -148,7 +148,7 @@ export default function Home() {
           <h2 className="text-5xl font-bold">Unveil top picks</h2>
           <p className="mt-7 text-lg">
             Unveil Mechelen like never before: where surprises await, history
-            comes alive, and every corner tells a unique story!
+            comes alive and every corner tells a unique story!
           </p>
         </div>
 
@@ -207,7 +207,7 @@ export default function Home() {
                   alt="Star"
                   className="w-4 h-4 mr-1"
                 />
-                <span>5.0</span>
+                <span>4.2</span>
               </div>
             </div>
             <h3 className="mt-4 text-2xl font-bold">
@@ -267,7 +267,7 @@ export default function Home() {
                   alt="Star"
                   className="w-4 h-4 mr-1"
                 />
-                <span>3.0</span>
+                <span>3.6</span>
               </div>
             </div>
             <h3 className="mt-4 text-2xl font-bold">
@@ -328,7 +328,7 @@ export default function Home() {
                   alt="Star"
                   className="w-4 h-4 mr-1"
                 />
-                <span>4.0</span>
+                <span>4.1</span>
               </div>
             </div>
             <h3 className="mt-4 text-2xl font-bold">
@@ -416,18 +416,20 @@ export default function Home() {
           <div className="flex flex-col space-y-6">
             {/* Logo */}
             <img
-              src="/unveil-logo.svg"
-              alt="Unveil Logo Group"
-              className="w-auto"
-            />
+  src="/unveil-logo.svg"
+  alt="Unveil Logo Group"
+  className="w-66" // Adjust size as needed
+/>
+
             {/* Beschrijving */}
-            <p className="max-w-sm">
+            <p className="max-w-sm pt-2">
   Uncover the secrets of Mechelen with Unveil.<br />
   The ultimate way to sightsee and explore like a local!
 </p>
 
+
             {/* Download images */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 pt-2">
               <img
                 src="/app-store.png"
                 alt="Download on the App Store"
