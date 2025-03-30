@@ -1,145 +1,77 @@
-import "./globals.css";
+'use client'; // Dit markeert het bestand als Client Component
+
+import React, { useState } from 'react';
 
 export default function Home() {
+  const [selectedTour, setSelectedTour] = useState('tour1'); // React Hook
+
   return (
     <div className="min-h-screen bg-[#252525] text-white">
-      <nav className="flex items-center justify-between p-4 bg-#252525">
+      <nav className="flex items-center justify-between p-4 bg-[#252525]">
         <div className="flex items-center">
-        <a href="/"><img src="/Logo.svg" alt="Logo" className="h-13 ml-8 mr-16" /></a>
+          <a href="/"><img src="/Logo.svg" alt="Logo" className="h-13 ml-8 mr-16" /></a>
 
           <ul className="flex space-x-12">
-            <li>
-              <a href="#home" className="hover-underline-animation font-bold">
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#about us"
-                className="hover-underline-animation font-bold"
-              >
-                About Us
-              </a>
-            </li>
-            <li>
-              <a
-                href="#how it works"
-                className="hover-underline-animation font-bold"
-              >
-                How it works
-              </a>
-            </li>
-            <li>
-              <a
-                href="#our tours"
-                className="hover-underline-animation font-bold"
-              >
-               Our Tours
-              </a>
-            </li>
-            <li>
-              <a href="#faq" className="hover-underline-animation font-bold">
-                Faq
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contact"
-                className="hover-underline-animation font-bold"
-              >
-                Contact
-              </a>
-            </li>
+            <li><a href="#home" className="hover-underline-animation font-bold">Home</a></li>
+            <li><a href="#about us" className="hover-underline-animation font-bold">About Us</a></li>
+            <li><a href="#how it works" className="hover-underline-animation font-bold">How it works</a></li>
+            <li><a href="#our tours" className="hover-underline-animation font-bold">Our Tours</a></li>
+            <li><a href="#faq" className="hover-underline-animation font-bold">Faq</a></li>
+            <li><a href="#contact" className="hover-underline-animation font-bold">Contact</a></li>
           </ul>
         </div>
         <button className="px-4 mr-10 py-2 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer">
-  Unveil app
-</button>
-
-
-
+          Unveil app
+        </button>
       </nav>
+
       <div className="relative w-full h-screen overflow-hidden">
-      <video
-  autoPlay
-  loop
-  muted
-  playsInline
-  className="absolute top-0 left-0 w-full h-full object-cover"
-  preload="none"
->
-  <source src="/introVideo.webm" type="video/webm" />
-  <source src="/introVideo.mp4" type="video/mp4" />
-  <p>Je browser ondersteunt geen video.</p>
-</video>
+        <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover" preload="none">
+          <source src="/introVideo.webm" type="video/webm" />
+          <source src="/introVideo.mp4" type="video/mp4" />
+          <p>Je browser ondersteunt geen video.</p>
+        </video>
 
-
-
-
-  {/* Donkere overlay */}
-  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-center">
-  Listen, discover, experience
-</h1>
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-center">
+            Listen, discover, experience
+          </h1>
 
-<h3 className="text-2xl md:text-3xl mt-6">
-  Explore Mechelen at your own pace
-</h3>
+          <h3 className="text-2xl md:text-3xl mt-6">
+            Explore Mechelen at your own pace
+          </h3>
 
-<button className="mt-16 px-6 py-3 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer">
-  Discover now
-</button>
-
-
+          <button className="mt-16 px-6 py-3 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer">
+            Discover now
+          </button>
         </div>
       </div>
-<div className="text-center mt-16">
-  <h2 className="text-5xl font-bold mb-6">Our tours</h2>
-  <div className="flex justify-center mt-24 space-x-24">
-    <div className="w-1/3">
-      <img src="/tour1.2.svg" alt="Tour 1" className="w-full" />
-      <h3 className="text-2xl font-bold mt-8 text-left">
-        Mechelen & the Holocaust
-      </h3>
-      <p className="mt-4 text-left">
-        Discover the poignant stories of the Holocaust in Mechelen.
-        Experience history, honor the victims, and be moved by the power
-        of remembrance.
-      </p>
-    </div>
-    <div className="w-1/3">
-      <img src="/tour2.2.svg" alt="Tour 2" className="w-full" />
-      <h3 className="text-2xl font-bold mt-8 text-left">
-        The Dijle: Mirror of Mechelen
-      </h3>
-      <p className="mt-4 text-left">
-        From historical trade routes to modern connector, discover how this
-        river has shaped and reflected the city&apos;s story through the ages.
-      </p>
-    </div>
-  </div>
-</div>
 
+      <div className="text-center mt-16">
+        <h2 className="text-5xl font-bold mb-6">Our tours</h2>
+        <div className="flex justify-center mt-24 space-x-24">
+          <div className="w-1/3">
+            <img src="/tour1.2.svg" alt="Tour 1" className="w-full" />
+            <h3 className="text-2xl font-bold mt-8 text-left">Mechelen & the Holocaust</h3>
+            <p className="mt-4 text-left">
+              Discover the poignant stories of the Holocaust in Mechelen. Experience history, honor the victims, and be moved by the power of remembrance.
+            </p>
+          </div>
+          <div className="w-1/3">
+            <img src="/tour2.2.svg" alt="Tour 2" className="w-full" />
+            <h3 className="text-2xl font-bold mt-8 text-left">The Dijle: Mirror of Mechelen</h3>
+            <p className="mt-4 text-left">
+              From historical trade routes to modern connector, discover how this river has shaped and reflected the city's story through the ages.
+            </p>
+          </div>
+        </div>
+      </div>
 
       <div className="relative w-full mt-27 px-4 md:px-12">
-        <img
-          src="/wide-image.svg"
-          alt="Wide Image"
-          className="w-full mx-auto rounded-md"
-          style={{ maxWidth: "calc(100% - 370px)" }}
-        />
+        <img src="/wide-image.svg" alt="Wide Image" className="w-full mx-auto rounded-md" style={{ maxWidth: "calc(100% - 370px)" }} />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white">
-            Explore Mechelen
-          </h1>
-          <button
-  className="mt-12 px-6 py-3 rounded-md text-white font-bold bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer"
->
-  Explore now
-</button>
-
-
+          <h1 className="text-8xl md:text-7xl font-bold text-white">Explore Mechelen</h1>
         </div>
       </div>
 
@@ -147,208 +79,328 @@ export default function Home() {
         <div className="text-center">
           <h2 className="text-5xl font-bold">Unveil top picks</h2>
           <p className="mt-7 text-lg">
-            Unveil Mechelen like never before: where surprises await, history
-            comes alive and every corner tells a unique story!
+            Unveil Mechelen like never before: where surprises await, history comes alive, and every corner tells a unique story!
           </p>
         </div>
 
         <div className="flex justify-center space-x-4 mt-11">
-        <div className="rounded-lg bg-[#5CD4FF] flex w-[195.11px] h-[42px] justify-center items-center font-bold text-white hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer">
-  Self-Guided Tour
-</div>
+          {/* Knop 1 */}
+          <button
+            onClick={() => setSelectedTour('tour1')}
+            className={`rounded-lg flex w-[195.11px] h-[42px] justify-center items-center font-bold cursor-pointer ${selectedTour === 'tour1' ? 'bg-white text-black' : 'bg-[#5CD4FF] text-white'}`}
+          >
+            All Tours
+          </button>
 
+          {/* Knop 2 */}
+          <button
+            onClick={() => setSelectedTour('tour2')}
+            className={`rounded-lg flex w-[195.11px] h-[42px] justify-center items-center font-bold cursor-pointer ${selectedTour === 'tour2' ? 'bg-white text-black' : 'bg-[#5CD4FF] text-white'}`}
+          >
+            The Holocaust
+          </button>
 
-<div className="rounded-lg bg-[#5CD4FF] flex w-[195.11px] h-[42px] justify-center items-center font-bold text-white hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer">
-  The Holocaust
-</div>
-
-<div className="rounded-lg bg-[#5CD4FF] flex w-[195.11px] h-[42px] justify-center items-center font-bold text-white hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer">
-  The Dijle
-</div>
-
+          {/* Knop 3 */}
+          <button
+            onClick={() => setSelectedTour('tour3')}
+            className={`rounded-lg flex w-[195.11px] h-[42px] justify-center items-center font-bold cursor-pointer ${selectedTour === 'tour3' ? 'bg-white text-black' : 'bg-[#5CD4FF] text-white'}`}
+          >
+            The Dijle
+          </button>
         </div>
 
         <div className="flex justify-center space-x-10 mt-12">
-          {/* Card 1: Mechelen & the Holocaust */}
-          <div
-            style={{
-              width: "421.33px",
-              height: "620.98px",
-              flexShrink: 0,
-              borderRadius: "16px",
-              background: "#444",
-              boxShadow: "0px 8px 16px 0px rgba(0, 0, 0, 0.15)",
-            }}
-            className="p-4"
-          >
-            <img
-              src="/holocaust-image.png"
-              alt="Mechelen & the Holocaust"
-              className="w-full rounded-t-md"
-            />
-            <div className="flex items-center justify-between mt-4">
+          {/* Conditionally render cards based on selected tour */}
+          {selectedTour === 'tour1' && (
+            <>
               <div
                 style={{
-                  borderRadius: "8px",
-                  background: "#FFF",
-                  display: "flex",
-                  padding: "7px 12px",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  width: "421.33px",
+                  height: "620.98px",
                   flexShrink: 0,
+                  borderRadius: "16px",
+                  background: "#444",
+                  boxShadow: "0px 8px 16px 0px rgba(0, 0, 0, 0.15)",
                 }}
-                className="w-auto max-w-full"
+                className="p-4"
               >
-                <span className="text-black">Self-Guided Tour</span>
-              </div>
-              <div className="flex items-center">
                 <img
-                  src="/rating-star.svg"
-                  alt="Star"
-                  className="w-4 h-4 mr-1"
+                  src="/holocaust-image.png"
+                  alt="Mechelen & the Holocaust"
+                  className="w-full rounded-t-md"
                 />
-                <span>4.2</span>
+                <div className="flex items-center justify-between mt-4">
+                  <div
+                    style={{
+                      borderRadius: "8px",
+                      background: "#FFF",
+                      display: "flex",
+                      padding: "7px 12px",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      flexShrink: 0,
+                    }}
+                    className="w-auto max-w-full"
+                  >
+                    <span className="text-black">Self-Guided Tour</span>
+                  </div>
+                  <div className="flex items-center">
+                    <img
+                      src="/rating-star.svg"
+                      alt="Star"
+                      className="w-4 h-4 mr-1"
+                    />
+                    <span>4.2</span>
+                  </div>
+                </div>
+                <h3 className="mt-4 text-2xl font-bold">
+                  Mechelen & the Holocaust
+                </h3>
+                <p className="500 mt-1" style={{ color: "#5CD4FF" }}>
+                  Mechelen
+                </p>
+                <p className="mt-2">
+                Discover the history of the Holocaust, honoring the lives lost and the lessons we carry forward.
+                </p>
+                <button
+                  className="mt-13 px-6 py-2 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer"
+                >
+                  Discover
+                </button>
               </div>
-            </div>
-            <h3 className="mt-4 text-2xl font-bold">
-              Mechelen & the Holocaust
-            </h3>
-            <p className="500 mt-1" style={{ color: "#5CD4FF" }}>
-              Mechelen
-            </p>
-            <p className="mt-2">
-              Discover the poignant stories of the Holocaust in Mechelen.
-              Experience history, honor the victims, and be moved by the power
-              of remembrance.
-            </p>
-            <button
-  className="mt-10 px-6 py-2 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer"
->
-  Discover
-</button>
 
-          </div>
-
-          {/* Card 2: The Dijle: Mirror of Mechelen */}
-          <div
-            style={{
-              width: "421.33px",
-              height: "620.98px",
-              flexShrink: 0,
-              borderRadius: "16px",
-              background: "#444",
-              boxShadow: "0px 8px 16px 0px rgba(0, 0, 0, 0.15)",
-            }}
-            className="p-4"
-          >
-            <img
-              src="/dijle-image.png"
-              alt="The Dijle: Mirror of Mechelen"
-              className="w-full rounded-t-md"
-            />
-            <div className="flex items-center justify-between mt-4">
               <div
                 style={{
-                  borderRadius: "8px",
-                  background: "#FFF",
-                  display: "flex",
-                  padding: "7px 12px",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  width: "421.33px",
+                  height: "620.98px",
                   flexShrink: 0,
+                  borderRadius: "16px",
+                  background: "#444",
+                  boxShadow: "0px 8px 16px 0px rgba(0, 0, 0, 0.15)",
                 }}
-                className="w-auto max-w-full"
+                className="p-4"
               >
-                <span className="text-black">Self-Guided Tour</span>
-              </div>
-              <div className="flex items-center">
                 <img
-                  src="/rating-star.svg"
-                  alt="Star"
-                  className="w-4 h-4 mr-1"
+                  src="/dijle-image.png"
+                  alt="The Dijle: Mirror of Mechelen"
+                  className="w-full rounded-t-md"
                 />
-                <span>3.6</span>
+                <div className="flex items-center justify-between mt-4">
+                  <div
+                    style={{
+                      borderRadius: "8px",
+                      background: "#FFF",
+                      display: "flex",
+                      padding: "7px 12px",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      flexShrink: 0,
+                    }}
+                    className="w-auto max-w-full"
+                  >
+                    <span className="text-black">Self-Guided Tour</span>
+                  </div>
+                  <div className="flex items-center">
+                    <img
+                      src="/rating-star.svg"
+                      alt="Star"
+                      className="w-4 h-4 mr-1"
+                    />
+                    <span>3.6</span>
+                  </div>
+                </div>
+                <h3 className="mt-4 text-2xl font-bold">
+                  The Dijle: Mirror of Mechelen
+                </h3>
+                <p className="500 mt-1" style={{ color: "#5CD4FF" }}>
+                  Mechelen
+                </p>
+                <p className="mt-2">
+                  Discover how the Dijle River has shaped the city's history.
+                </p>
+                <button
+                  className="mt-12 px-6 py-2 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer"
+                >
+                  Discover
+                </button>
               </div>
-            </div>
-            <h3 className="mt-4 text-2xl font-bold">
-              The Dijle: Mirror of Mechelen
-            </h3>
-            <p className="500 mt-1" style={{ color: "#5CD4FF" }}>
-              Mechelen
-            </p>
 
-            <p className="mt-2">
-              From historic trade route to modern connector, discover how this
-              river has shaped and reflected the city&apos;s story through the
-              ages.
-            </p>
-            <button
-  className="mt-10 px-6 py-2 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer"
->
-  Discover
-</button>
-
-          </div>
-
-          {/* Card 3: The Monuments: Silent guardians of Mechelen */}
-          <div
-            style={{
-              width: "421.33px",
-              height: "620.98px",
-              flexShrink: 0,
-              borderRadius: "16px",
-              background: "#444",
-              boxShadow: "0px 8px 16px 0px rgba(0, 0, 0, 0.15)",
-            }}
-            className="p-4"
-          >
-            <img
-              src="/monument-image.png"
-              alt="The Monuments: Silent guardians of Mechelen"
-              className="w-full rounded-t-md"
-            />
-            <div className="flex items-center justify-between mt-4">
               <div
                 style={{
-                  borderRadius: "8px",
-                  background: "#FFF",
-                  display: "flex",
-                  padding: "7px 12px",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  width: "421.33px",
+                  height: "620.98px",
                   flexShrink: 0,
+                  borderRadius: "16px",
+                  background: "#444",
+                  boxShadow: "0px 8px 16px 0px rgba(0, 0, 0, 0.15)",
                 }}
-                className="w-auto max-w-full"
+                className="p-4"
               >
-                <span className="text-black">Self-Guided Tour</span>
-              </div>
-              <div className="flex items-center">
                 <img
-                  src="/rating-star.svg"
-                  alt="Star"
-                  className="w-4 h-4 mr-1"
+                  src="/monument-image.png"
+                  alt="The Dijle: Mirror of Mechelen"
+                  className="w-full rounded-t-md"
                 />
-                <span>4.1</span>
+                <div className="flex items-center justify-between mt-4">
+                  <div
+                    style={{
+                      borderRadius: "8px",
+                      background: "#FFF",
+                      display: "flex",
+                      padding: "7px 12px",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      flexShrink: 0,
+                    }}
+                    className="w-auto max-w-full"
+                  >
+                    <span className="text-black">Self-Guided Tour</span>
+                  </div>
+                  <div className="flex items-center">
+                    <img
+                      src="/rating-star.svg"
+                      alt="Star"
+                      className="w-4 h-4 mr-1"
+                    />
+                    <span>4.8</span>
+                  </div>
+                </div>
+                <h3 className="mt-4 text-2xl font-bold">
+                The Monuments of Mechelen
+                </h3>
+                <p className="500 mt-1" style={{ color: "#5CD4FF" }}>
+                  Mechelen
+                </p>
+                <p className="mt-2">
+                Discover Mechelen, where monuments tell the story of a city shaped by history and transformation.
+                </p>
+                <button
+                  className="mt-12 px-6 py-2 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer"
+                >
+                  Discover
+                </button>
               </div>
-            </div>
-            <h3 className="mt-4 text-2xl font-bold">
-              The Monuments of Mechelen
-            </h3>
-            <p className="500 mt-1" style={{ color: "#5CD4FF" }}>
-              Mechelen
-            </p>
-            <p className="mt-2">
-             In the heart of Mechelen, the monuments stand tall, echoing centuries of history and shaping the city&apos;s identity through time.
-            </p>
-            <button
-  className="mt-10 px-6 py-2 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer"
->
-  Discover
-</button>
+            </>
+          )}
 
-          </div>
+          {selectedTour === 'tour2' && (
+            <div
+              style={{
+                width: "421.33px",
+                height: "620.98px",
+                flexShrink: 0,
+                borderRadius: "16px",
+                background: "#444",
+                boxShadow: "0px 8px 16px 0px rgba(0, 0, 0, 0.15)",
+              }}
+              className="p-4"
+            >
+              <img
+                src="/holocaust-image.png"
+                alt="Mechelen & the Holocaust"
+                className="w-full rounded-t-md"
+              />
+              <div className="flex items-center justify-between mt-4">
+                <div
+                  style={{
+                    borderRadius: "8px",
+                    background: "#FFF",
+                    display: "flex",
+                    padding: "7px 12px",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    flexShrink: 0,
+                  }}
+                  className="w-auto max-w-full"
+                >
+                  <span className="text-black">Self-Guided Tour</span>
+                </div>
+                <div className="flex items-center">
+                  <img
+                    src="/rating-star.svg"
+                    alt="Star"
+                    className="w-4 h-4 mr-1"
+                  />
+                  <span>4.2</span>
+                </div>
+              </div>
+              <h3 className="mt-4 text-2xl font-bold">
+                Mechelen & the Holocaust
+              </h3>
+              <p className="500 mt-1" style={{ color: "#5CD4FF" }}>
+                Mechelen
+              </p>
+              <p className="mt-2">
+              Discover the history of the Holocaust, honoring the lives lost and the lessons we carry forward.
+              </p>
+              <button
+                className="mt-12 px-6 py-2 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer"
+              >
+                Discover
+              </button>
+            </div>
+          )}
+
+          {selectedTour === 'tour3' && (
+            <div
+              style={{
+                width: "421.33px",
+                height: "620.98px",
+                flexShrink: 0,
+                borderRadius: "16px",
+                background: "#444",
+                boxShadow: "0px 8px 16px 0px rgba(0, 0, 0, 0.15)",
+              }}
+              className="p-4"
+            >
+              <img
+                src="/dijle-image.png"
+                alt="The Dijle: Mirror of Mechelen"
+                className="w-full rounded-t-md"
+              />
+              <div className="flex items-center justify-between mt-4">
+                <div
+                  style={{
+                    borderRadius: "8px",
+                    background: "#FFF",
+                    display: "flex",
+                    padding: "7px 12px",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    flexShrink: 0,
+                  }}
+                  className="w-auto max-w-full"
+                >
+                  <span className="text-black">Self-Guided Tour</span>
+                </div>
+                <div className="flex items-center">
+                  <img
+                    src="/rating-star.svg"
+                    alt="Star"
+                    className="w-4 h-4 mr-1"
+                  />
+                  <span>4.8</span>
+                </div>
+              </div>
+              <h3 className="mt-4 text-2xl font-bold">
+                The Dijle River Experience
+              </h3>
+              <p className="500 mt-1" style={{ color: "#5CD4FF" }}>
+                Mechelen
+              </p>
+              <p className="mt-2">
+              Discover Mechelen, where monuments tell the story of a city shaped by history and transformation.
+              </p>
+              <button
+                className="mt-12 px-6 py-2 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer"
+              >
+                Discover
+              </button>
+            </div>
+          )}
         </div>
       </section>
+
 
       <div className="relative w-full mt-25 px-4 md:px-12">
         <img
