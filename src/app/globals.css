@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'nunitoSansRegular';
+  src: url('/fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+  font-weight: regular;
+  font-style: normal;
+}
+
+@theme {
+  --font-sans: 'nunitoSansRegular';
+}
+
+:root {
+  --background: #ffffff;
+  --highlight: #5CD4FF;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #252525;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: white; /* De tekst blijft wit */
+  text-decoration: none;
+  transition: color 0.3s ease; /* Soepele kleurverandering */
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px; /* Iets dikkere lijn voor een sterkere visuele impact */
+  bottom: -4px; /* Iets meer ruimte onder de link voor verfijning */
+  left: 0;
+  background-color: #ffffff; /* Fel witte lijn */
+  border-radius: 2px; /* Subtiele afgeronde hoeken */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.4s ease-out, background-color 0.3s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  background-color: #ffffff; /* Het blijft fel wit bij hover */
+}
+
+.hover-underline-animation:hover {
+  color: #ffffff; /* De tekst blijft fel wit */
+}
+
+
+
