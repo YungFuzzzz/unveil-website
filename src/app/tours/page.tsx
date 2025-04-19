@@ -7,8 +7,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import type * as L from 'leaflet'; // ✅ Typing voor leaflet
 
-// Dynamic imports for react-leaflet (client-side only)
 const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), { ssr: false });
 const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), { ssr: false });
 const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), { ssr: false });
@@ -47,17 +47,17 @@ const tours = [
   },
 ];
 
-export default function AboutPage() {
+export default function ToursPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [customIcon, setCustomIcon] = useState<L.Icon | null>(null); // ✅ Typing
   const pathname = usePathname();
 
   useEffect(() => {
     setIsClient(true);
 
-    async function loadLeaflet() {
-      const L = await import('leaflet');
-      const DefaultIcon = L.icon({
+    import('leaflet').then((L) => {
+      const icon = new L.Icon({
         iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
         iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
         shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
@@ -66,10 +66,8 @@ export default function AboutPage() {
         popupAnchor: [1, -34],
         shadowSize: [41, 41],
       });
-      L.Marker.prototype.options.icon = DefaultIcon;
-    }
-
-    loadLeaflet();
+      setCustomIcon(icon);
+    });
   }, []);
 
   useEffect(() => {
@@ -80,15 +78,7 @@ export default function AboutPage() {
     return () => window.removeEventListener('keydown', handleEsc);
   }, []);
 
-  const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about' },
-    { name: 'Our Tours', href: '/tours' },
-    { name: 'Pricing', href: '/pricing' },
-    { name: 'Contact', href: '/contact' },
-  ];
-
-  if (!isClient) return null;
+  if (!isClient || !customIcon) return null;
 
   return (
     <main className="min-h-screen bg-[#2f2f2f] text-white overflow-x-hidden">
@@ -99,21 +89,21 @@ export default function AboutPage() {
             <Link href="/">
               <Image src="/Logo.svg" alt="Logo" width={45} height={40} className="h-13 ml-8 mr-16" />
             </Link>
-            <ul className="hidden md:flex space-x-12 font-bold">
-              {navLinks.map((item, idx) => (
-                <li key={idx} className="relative group">
-                  <Link href={item.href} className="text-white hover:text-[#5CD4FF]">
-                    {item.name}
-                    <span className={`absolute left-0 -bottom-1 h-[2px] w-full bg-[#5CD4FF] origin-left transform transition-transform ${pathname === item.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
-                  </Link>
-                </li>
-              ))}
+            <ul className="hidden lg:flex space-x-12 font-bold">
+              {['/', '/about', '/tours', '/pricing', '/contact'].map((href, idx) => {
+                const label = ['Home', 'About Us', 'Our Tours', 'Pricing', 'Contact'][idx];
+                return (
+                  <li key={idx} className="relative group">
+                    <Link href={href} className="text-white hover:text-[#5CD4FF]">
+                      {label}
+                      <span className={`absolute left-0 -bottom-1 h-[2px] w-full bg-[#5CD4FF] origin-left transform transition-transform ${pathname === href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
-          <div className="hidden md:block">
-            <button className="px-4 mr-10 py-2 rounded-md font-bold bg-[#5CD4FF] hover:bg-white hover:text-black">Unveil app</button>
-          </div>
-          <div className="md:hidden pr-4">
+          <div className="lg:hidden pr-4">
             <button onClick={() => setMenuOpen(true)} aria-label="Open Menu">
               <Menu size={28} />
             </button>
@@ -121,11 +111,11 @@ export default function AboutPage() {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile menu */}
       {menuOpen && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40">
           <motion.aside
-            className="fixed left-0 top-0 bottom-0 w-4/5 max-w-sm bg-[#2a2a2a] p-8 flex flex-col justify-between shadow-2xl"
+            className="fixed left-0 top-0 bottom-0 w-3/4 max-w-sm bg-[#2a2a2a] p-8 flex flex-col justify-between shadow-2xl"
             initial={{ x: '-100%' }}
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
@@ -137,50 +127,38 @@ export default function AboutPage() {
               </button>
             </div>
             <nav className="flex flex-col space-y-6 text-lg font-semibold">
-              {navLinks.map((item, idx) => (
-                <div key={idx}>
-                  <Link href={item.href} onClick={() => setMenuOpen(false)} className="text-white hover:text-[#5CD4FF]">
-                    {item.name}
-                  </Link>
-                </div>
-              ))}
+              {['/', '/about', '/tours', '/pricing', '/contact'].map((href, idx) => {
+                const label = ['Home', 'About Us', 'Our Tours', 'Pricing', 'Contact'][idx];
+                return (
+                  <div key={idx} className="relative group">
+                    <Link href={href} onClick={() => setMenuOpen(false)} className={`relative text-white hover:text-[#5CD4FF] ${pathname === href ? 'text-[#5CD4FF]' : ''}`}>
+                      {label}
+                      <span className={`absolute left-0 -bottom-1 h-[2px] w-full bg-[#5CD4FF] origin-left transform transition-transform ${pathname === href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+                    </Link>
+                  </div>
+                );
+              })}
             </nav>
-            <button className="w-full py-3 mt-10 rounded-md bg-[#5CD4FF] font-bold hover:bg-white hover:text-black">
-              Unveil app
-            </button>
+            <button className="w-full py-3 mt-10 rounded-md bg-[#5CD4FF] font-bold hover:bg-white hover:text-black">Unveil app</button>
           </motion.aside>
         </div>
       )}
 
-      {/* Hero Section */}
+      {/* Hero & Map */}
       <section className="relative bg-[#1f1f1f] text-white px-4 md:px-16 py-35 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center mb-32">
-          <motion.h2
-            className="text-5xl md:text-6xl font-extrabold"
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <motion.h2 className="text-5xl md:text-6xl font-extrabold" initial={{ opacity: 0, y: -30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             Our tours
           </motion.h2>
-          <motion.p
-            className="text-lg md:text-xl text-white max-w-2xl mx-auto mt-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
+          <motion.p className="text-lg md:text-xl text-white max-w-2xl mx-auto mt-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
             Uncover Mechelen’s hidden stories with immersive audio walks and tours.
           </motion.p>
 
-          {/* Map */}
           <div className="mt-16 w-full h-[500px] rounded-3xl overflow-hidden border border-[#444] shadow-2xl">
             <MapContainer center={[51.0286, 4.4777]} zoom={14} scrollWheelZoom={false} className="w-full h-full">
-              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution='&copy; OpenStreetMap contributors' />
+              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; OpenStreetMap contributors" />
               {tours.map((tour) => (
-                <Marker
-                  key={tour.id}
-                  position={[51.0286 + Math.random() * 0.01 - 0.005, 4.4777 + Math.random() * 0.01 - 0.005]}
-                >
+                <Marker key={tour.id} icon={customIcon} position={[51.0286 + Math.random() * 0.01 - 0.005, 4.4777 + Math.random() * 0.01 - 0.005]}>
                   <Popup>
                     <strong>{tour.title}</strong>
                     <br />
@@ -192,17 +170,10 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Tours List */}
+        {/* Tour cards */}
         <div className="space-y-48 max-w-screen-xl mx-auto">
           {tours.map((tour, index) => (
-            <motion.div
-              key={tour.id}
-              className={`flex flex-col lg:flex-row ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''} gap-16 items-center`}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
+            <motion.div key={tour.id} className={`flex flex-col lg:flex-row ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''} gap-16 items-center`} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
               <div className="lg:w-1/2 w-full">
                 <div className="relative w-full aspect-[4/3] rounded-[2rem] overflow-hidden">
                   <Image src={tour.image} alt={tour.title} fill className="object-cover" />
