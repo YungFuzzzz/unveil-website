@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -76,9 +77,16 @@ export default function Home() {
       <nav className="relative p-4 bg-[#252525] border-b border-[#333] z-50">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="/">
-              <img src="/Logo.svg" alt="Logo" className="h-13 ml-8 mr-16" />
-            </a>
+          <Link href="/">
+  <Image 
+    src="/Logo.svg" 
+    alt="Logo" 
+    width={45} 
+    height={22} 
+    className="ml-8 mr-16"
+  />
+</Link>
+
 
             {/* Desktop menu */}
             <ul className="hidden md:flex space-x-12 font-bold">
@@ -219,7 +227,13 @@ export default function Home() {
   <div className="flex flex-col md:flex-row justify-center md:justify-center items-center md:items-start mt-12 md:mt-24 space-y-16 md:space-y-0 md:space-x-24">
     {/* Tour 1 */}
     <div className="w-full md:w-1/3">
-      <img src="/tour1.2.svg" alt="Tour 1" className="w-full" />
+    <Image
+  src="/tour1.2.svg"
+  alt="Tour 1"
+  width={500} 
+  height={500} 
+  className="w-full"
+/>
       <h3 className="text-2xl font-bold mt-8 text-left">Mechelen & the Holocaust</h3>
       <p className="mt-4 text-left">
         Discover the poignant stories of the Holocaust in Mechelen. Experience history, honor the victims, and be moved by the power of remembrance.
@@ -228,22 +242,30 @@ export default function Home() {
 
     {/* Tour 2 */}
     <div className="w-full md:w-1/3">
-      <img src="/tour2.2.svg" alt="Tour 2" className="w-full" />
+    <Image 
+  src="/tour2.2.svg" 
+  alt="Tour 2" 
+  width={500} // Set the appropriate width
+  height={300} // Set the appropriate height
+  className="w-full"
+/>
       <h3 className="text-2xl font-bold mt-8 text-left">The Dijle: Mirror of Mechelen</h3>
       <p className="mt-4 text-left">
-        From historical trade routes to modern connector, discover how this river has shaped and reflected the city's story through the ages.
-      </p>
+  From historical trade routes to modern connector, discover how this river has shaped and reflected the city&apos;s story through the ages.
+</p>
     </div>
   </div>
 </div>
 
 <div className="relative w-full mt-24 px-6 sm:px-8 md:px-4">
   <div className="relative w-full mx-auto rounded-md overflow-hidden md:max-w-[calc(100%-370px)]">
-    <img 
-      src="/wide-image.svg" 
-      alt="Wide Image" 
-      className="w-full object-cover h-[20vh] sm:h-[55vh] md:h-auto" 
-    />
+  <Image 
+  src="/wide-image.svg" 
+  alt="Wide Image" 
+  className="w-full object-cover h-[20vh] sm:h-[55vh] md:h-auto" 
+  width={1200} // Provide a width for optimization
+  height={800} // Provide a height for optimization
+/>
     <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
       <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white drop-shadow-lg">
         Explore Mechelen
@@ -298,13 +320,27 @@ export default function Home() {
     {selectedTour === 'tour1' && (
       <>
         <div className="w-full md:w-[421.33px] h-[620.98px] bg-[#444] rounded-2xl shadow-lg p-4">
-          <img src="/holocaust-image.png" alt="Mechelen & the Holocaust" className="w-full rounded-t-md" />
+        <Image 
+  src="/holocaust-image.png" 
+  alt="Mechelen & the Holocaust" 
+  className="w-full rounded-t-md" 
+  width={1200} // Provide a width for optimization (adjust based on the image dimensions)
+  height={800} // Provide a height for optimization (adjust based on the image dimensions)
+  priority // Optional: you can add this if the image is critical and should be loaded immediately
+/>
           <div className="flex items-center justify-between mt-4">
             <div className="bg-white rounded-md px-3 py-1">
               <span className="text-black text-sm">Self-Guided Tour</span>
             </div>
             <div className="flex items-center">
-              <img src="/rating-star.svg" alt="Star" className="w-4 h-4 mr-1" />
+            <Image
+  src="/rating-star.svg"
+  alt="Star"
+  className="w-4 h-4 mr-1"
+  width={16}  // Adjust width based on the image size
+  height={16} // Adjust height based on the image size
+/>
+
               <span className="text-white">4.2</span>
             </div>
           </div>
@@ -322,21 +358,34 @@ export default function Home() {
         </div>
 
         <div className="w-full md:w-[421.33px] h-[580.98px] md:h-[620.98px] bg-[#444] rounded-2xl shadow-lg p-4">
-          <img src="/dijle-image.png" alt="The Dijle: Mirror of Mechelen" className="w-full rounded-t-md" />
+        <Image
+  src="/dijle-image.png"
+  alt="The Dijle: Mirror of Mechelen"
+  className="w-full rounded-t-md"
+  width={1200}  // Adjust the width based on the actual image size or layout needs
+  height={800}  // Adjust the height based on the actual image size or layout needs
+/>
           <div className="flex items-center justify-between mt-4">
             <div className="bg-white rounded-md px-3 py-1">
               <span className="text-black text-sm">Self-Guided Tour</span>
             </div>
             <div className="flex items-center">
-              <img src="/rating-star.svg" alt="Star" className="w-4 h-4 mr-1" />
+            <Image
+  src="/rating-star.svg"
+  alt="Star"
+  className="w-4 h-4 mr-1"
+  width={16}  // Adjust width to match the original size or your design
+  height={16} // Adjust height to match the original size or your design
+/>
               <span className="text-white">3.6</span>
             </div>
           </div>
           <h3 className="mt-4 text-2xl font-bold text-white">The Dijle: Mirror of Mechelen</h3>
           <p className="mt-1 text-white">Mechelen</p>
           <p className="mt-2 text-white">
-            Discover how the Dijle River has shaped the city's history.
-          </p>
+  Discover how the Dijle River has shaped the city&apos;s history.
+</p>
+
           <a
             href="/tours"
             className="mt-12 inline-block px-6 py-2 rounded-md font-bold bg-[#5CD4FF] text-white hover:bg-white hover:text-black transition-all duration-300"
@@ -346,13 +395,25 @@ export default function Home() {
         </div>
 
         <div className="w-full md:w-[421.33px] h-[620.98px] bg-[#444] rounded-2xl shadow-lg p-4">
-          <img src="/monument-image.png" alt="The Monuments of Mechelen" className="w-full rounded-t-md" />
+        <Image
+  src="/monument-image.png"
+  alt="The Monuments of Mechelen"
+  className="w-full rounded-t-md"
+  width={1200}  // Adjust width based on your image's natural size or layout requirements
+  height={800}  // Adjust height based on your image's natural size or layout requirements
+/>
           <div className="flex items-center justify-between mt-4">
             <div className="bg-white rounded-md px-3 py-1">
               <span className="text-black text-sm">Self-Guided Tour</span>
             </div>
             <div className="flex items-center">
-              <img src="/rating-star.svg" alt="Star" className="w-4 h-4 mr-1" />
+            <Image
+  src="/rating-star.svg"
+  alt="Star"
+  className="w-4 h-4 mr-1"
+  width={16}  // Adjust width based on your image's natural size or layout requirements
+  height={16}  // Adjust height based on your image's natural size or layout requirements
+/>
               <span className="text-white">4.8</span>
             </div>
           </div>
@@ -373,13 +434,25 @@ export default function Home() {
 
     {selectedTour === 'tour2' && (
       <div className="w-full md:w-[421.33px] h-[620.98px] bg-[#444] rounded-2xl shadow-lg p-4">
-        <img src="/holocaust-image.png" alt="Mechelen & the Holocaust" className="w-full rounded-t-md" />
+      <Image
+  src="/holocaust-image.png"
+  alt="Mechelen & the Holocaust"
+  className="w-full rounded-t-md"
+  width={500}  // Set the width according to the image size or layout needs
+  height={300} // Set the height according to the image size or layout needs
+/>
         <div className="flex items-center justify-between mt-4">
           <div className="bg-white rounded-md px-3 py-1">
             <span className="text-black text-sm">Self-Guided Tour</span>
           </div>
           <div className="flex items-center">
-            <img src="/rating-star.svg" alt="Star" className="w-4 h-4 mr-1" />
+          <Image
+  src="/rating-star.svg"
+  alt="Star"
+  className="w-4 h-4 mr-1"
+  width={16}  // Set an appropriate width for the star icon
+  height={16} // Set an appropriate height for the star icon
+/>
             <span className="text-white">4.2</span>
           </div>
         </div>
@@ -399,13 +472,25 @@ export default function Home() {
 
     {selectedTour === 'tour3' && (
       <div className="w-full md:w-[421.33px] h-[620.98px] bg-[#444] rounded-2xl shadow-lg p-4">
-        <img src="/dijle-image.png" alt="The Dijle River Experience" className="w-full rounded-t-md" />
+  <Image
+  src="/dijle-image.png"
+  alt="The Dijle River Experience"
+  className="w-full rounded-t-md"
+  width={1200}  // Set an appropriate width
+  height={800}  // Set an appropriate height
+/>
         <div className="flex items-center justify-between mt-4">
           <div className="bg-white rounded-md px-3 py-1">
             <span className="text-black text-sm">Self-Guided Tour</span>
           </div>
           <div className="flex items-center">
-            <img src="/rating-star.svg" alt="Star" className="w-4 h-4 mr-1" />
+          <Image
+  src="/rating-star.svg"
+  alt="Star"
+  className="w-4 h-4 mr-1"
+  width={16}  // Set appropriate width
+  height={16} // Set appropriate height
+/>
             <span className="text-white">4.8</span>
           </div>
         </div>
@@ -427,11 +512,14 @@ export default function Home() {
 
 <div className="relative w-full mt-23 px-6.5 sm:px-10 md:px-4">
   <div className="relative w-full mx-auto rounded-md overflow-hidden md:max-w-[calc(100%-320px)]">
-    <img 
-      src="/closer-look.png" 
-      alt="Wide Image" 
-      className="w-full object-cover h-[22vh] sm:h-[55vh] md:h-auto" 
-    />
+  <Image
+  src="/closer-look.png"
+  alt="Wide Image"
+  width={1920} // kies een realistische breedte
+  height={1080} // kies een realistische hoogte
+  className="w-full object-cover h-[22vh] sm:h-[55vh] md:h-auto"
+/>
+
     <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 sm:px-10">
       <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white drop-shadow-lg">
         Take a closer look
@@ -479,18 +567,25 @@ export default function Home() {
 
 
 
-<section id="image-slider" className="mt-12 overflow-x-auto mb-28 hidden md:block">
+<section id="image-slider" className="mt-12 overflow-x-auto mb-18 hidden md:block">
   <div className="flex justify-center gap-4 px-4">
     {Array.from({ length: 7 }).map((_, index) => (
-      <img
+      <div
         key={index}
-        src={`/image-slider${index + 1}.png`}
-        alt={`Image ${index + 1}`}
-        className="w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] h-auto flex-shrink-0 rounded-[25px]"
-      />
+        className="relative w-[80vw] sm:w-[40vw] md:w-[20vw] lg:w-[13vw] aspect-square flex-shrink-0 overflow-hidden rounded-[25px]"
+      >
+        <Image
+          src={`/image-slider${index + 1}.png`}
+          alt={`Image ${index + 1}`}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 80vw, (max-width: 1024px) 40vw, 13vw"
+        />
+      </div>
     ))}
   </div>
 </section>
+
 
 
 
@@ -501,11 +596,13 @@ export default function Home() {
       <div className="flex flex-col space-y-6 items-start text-left mb-10 md:mb-0">
         
         {/* Logo */}
-        <img
-          src="/unveil-logo.svg"
-          alt="Unveil Logo Group"
-          className="w-40 md:w-66"
-        />
+<Image
+  src="/unveil-logo.svg"
+  alt="Unveil Logo Group"
+  width={160} // Dit is gelijk aan de breedte van w-40 (waarbij 1rem = 16px)
+  height={66} // Dit is gelijk aan de hoogte van md:w-66 (wat 16.5rem = 264px is)
+  className="w-40 md:w-66" // De class blijft behouden om styling toe te passen
+/>
 
         {/* Beschrijving */}
         <p className="max-w-sm pt-2">
@@ -514,16 +611,20 @@ export default function Home() {
 
         {/* Download images */}
         <div className="flex space-x-4 pt-2 justify-start">
-          <img
-            src="/app-store.png"
-            alt="Download on the App Store"
-            className="w-auto h-12"
-          />
-          <img
-            src="/play-store.png"
-            alt="Download on the Playstore"
-            className="w-auto h-12"
-          />
+        <Image
+  src="/app-store.png"
+  alt="Download on the App Store"
+  width={120} // Pas dit aan aan hoe breed de afbeelding ongeveer moet zijn
+  height={48} // H-12 = 3rem = 48px
+  className="w-auto h-12"
+/>
+<Image
+  src="/play-store.png"
+  alt="Download on the Playstore"
+  width={120} // Pas dit aan aan hoe breed de afbeelding ongeveer moet zijn
+  height={48} // H-12 = 3rem = 48px
+  className="w-auto h-12"
+/>
         </div>
       </div>
 

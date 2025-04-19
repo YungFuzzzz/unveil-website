@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
@@ -50,9 +51,15 @@ export default function AboutPage() {
       <nav className="relative p-4 bg-[#252525] border-b border-[#333] z-50">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="/">
-              <img src="/Logo.svg" alt="Logo" className="h-13 ml-8 mr-16" />
-            </a>
+          <Link href="/">
+  <Image
+    src="/Logo.svg"
+    alt="Logo"
+    width={45} // Stel de gewenste breedte in
+    height={40} // Stel de gewenste hoogte in
+    className="h-13 ml-8 mr-16"
+  />
+</Link>
 
             {/* Desktop menu */}
             <ul className="hidden md:flex space-x-12 font-bold">
@@ -178,9 +185,11 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <h2 className="text-5xl md:text-6xl font-extrabold text-center mb-11 text-white">
-            Got a question? We're here
-          </h2>
+<h2 className="text-5xl md:text-6xl font-extrabold text-center mb-11 text-white">
+  Got a question? We&apos;re here
+</h2>
+
+
 
           <p className="text-center text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
             Fill out the form and our team will get back to you shortly.

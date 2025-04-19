@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
@@ -36,9 +37,16 @@ export default function PrivacyPage() {
       <nav className="relative p-4 bg-[#252525] border-b border-[#333] z-50">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="/">
-              <img src="/Logo.svg" alt="Logo" className="h-13 ml-8 mr-16" />
-            </a>
+          <Link href="/">
+  <Image
+    src="/Logo.svg"
+    alt="Logo"
+    width={45} // Stel de gewenste breedte in
+    height={40} // Stel de gewenste hoogte in
+    className="h-13 ml-8 mr-16"
+  />
+</Link>
+
 
             {/* Desktop menu */}
             <ul className="hidden md:flex space-x-12 font-bold">
@@ -204,8 +212,9 @@ export default function PrivacyPage() {
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">How to Delete Your Account</h2>
           <p className="text-lg mb-6">
-  If you wish to delete your account and all associated personal data, please send an email to our support team at <a href="mailto:team@unveil.be" className="text-[#5CD4FF]">team@unveil.be</a> with the subject "Request to Delete My Account". We will process your request in compliance with applicable data protection laws.
+  If you wish to delete your account and all associated personal data, please send an email to our support team at <a href="mailto:team@unveil.be" className="text-[#5CD4FF]">team@unveil.be</a> with the subject &quot;Request to Delete My Account&quot;. We will process your request in compliance with applicable data protection laws.
 </p>
+
         </div>
       </section>
     </main>

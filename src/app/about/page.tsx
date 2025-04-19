@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
@@ -36,9 +37,15 @@ export default function AboutPage() {
       <nav className="relative p-4 bg-[#252525] border-b border-[#333] z-50">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="/">
-              <img src="/Logo.svg" alt="Logo" className="h-13 ml-8 mr-16" />
-            </a>
+          <Link href="/">
+  <Image
+    src="/Logo.svg"
+    alt="Logo"
+    width={45} // Stel de gewenste breedte in
+    height={40} // Stel de gewenste hoogte in
+    className="h-13 ml-8 mr-16"
+  />
+</Link>
 
             {/* Desktop menu */}
             <ul className="hidden md:flex space-x-12 font-bold">
@@ -181,11 +188,14 @@ export default function AboutPage() {
 
     <div className="relative">
       <div className="rounded-2xl overflow-hidden shadow-2xl border border-[#333]">
-        <img
-          src="/monument-image.png"
-          alt="Discover Mechelen with Unveil"
-          className="w-full h-auto object-cover"
-        />
+      <Image
+  src="/monument-image.png"
+  alt="Discover Mechelen with Unveil"
+  layout="responsive"
+  width={1200} // Voeg een geschikte breedte in
+  height={800} // Voeg een geschikte hoogte in
+  className="object-cover"
+/>
       </div>
     </div>
   </div>
