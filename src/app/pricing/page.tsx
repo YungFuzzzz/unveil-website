@@ -25,7 +25,7 @@ export default function AboutPage() {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about' },
+    { name: 'About Us', href: '/about' },   
     { name: 'Our Tours', href: '/tours' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'Contact', href: '/contact' }
@@ -33,49 +33,49 @@ export default function AboutPage() {
 
   const plans = [
     {
-      name: 'Basic',
-      price: '€9,99/mo',
-      subtitle: 'or €1.99/day',
+      name: 'Day pass',
+      price: '€1,99/day',
+      subtitle: 'Includes full city unlock and access to all tours and soundspots   for one day',
       features: [
-        '10 tour per month',
-        'Essential features like location & timeslots',
-        'Email support (response within 48h)',
-        'Access to community & guide updates',
-        'Personal dashboard with tour history'
+        'Full city unlocked',
+        'All soundspots included',
+        'All tours included',
+        'Valid for 24 hours',
+        'No subscription needed', 
       ],
-      button: 'Choose basic',
+      button: 'Get day pass',
       highlight: false,
-      badge: 'Starter'
+      badge: 'Day pass'
     },
     {
-      name: 'Pro',
-      price: '€24,99/mo',
-      subtitle: 'or €4.99/day',
+      name: 'Week pass',
+      price: '€7,99/week',
+      subtitle: 'Includes full city unlock and access to all tours and soundspots for one week',
       features: [
-        'Up to 50 tours per month',
-        'Advanced stats & insights',
-        'Priority support within 12h',
-        'Custom branding & promo page',
-        'Access to exclusive events & webinars'
+        'Full city unlocked',
+        'All soundspots included',
+        'All tours included',
+        'Valid for 7 days',
+        'No subscription needed',
       ],
-      button: 'Choose pro',
+      button: 'Get week pass',
       highlight: true,
-      badge: 'Most popular'
+      badge: 'Week pass'
     },
     {
-      name: 'Ultimate',
-      price: '€49,99/mo',
-      subtitle: 'or €9.99/day',
+      name: 'City pass',
+      price: '€24,99/lifetime',
+      subtitle: 'One-time purchase, lifetime access to the complete city and all tours & sound spots',
       features: [
-        'Unlimited tours per month',
-        'All Pro features included',
-        '24/7 premium support (chat & phone)',
-        'Dedicated account manager',
-        'Early access to beta features & updates'
+        'Full city unlocked forever',
+        'All soundspots included',
+        'All tours included',
+        'Lifetime access',
+        'Early access to beta features'
       ],
-      button: 'Choose ultimate',
+      button: 'Get city pass',
       highlight: false,
-      badge: 'Professional'
+      badge: 'City pass'
     }
   ];
 
@@ -88,8 +88,8 @@ export default function AboutPage() {
   <Image
     src="/Logo.svg"
     alt="Logo"
-    width={45} // Stel de gewenste breedte in
-    height={40} // Stel de gewenste hoogte in
+    width={45} 
+    height={40} 
     className="h-13 ml-8 mr-16"
   />
 </Link>
@@ -195,7 +195,7 @@ export default function AboutPage() {
 </h2>
 
           <p className="text-lg text-gray-300 mb-16 max-w-2xl mx-auto">
-            Flexible, transparent, and surprise-free. A perfect plan for every type of traveler.
+           A perfect plan for every type of traveler.
           </p>
 
           <div className="flex flex-col lg:flex-row justify-center gap-10">

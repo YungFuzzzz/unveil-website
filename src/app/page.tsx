@@ -649,7 +649,7 @@ export default function Home() {
             <li><a href="/links" className="hover-underline-animation">Privacy</a></li>
             <li><a href="/links" className="hover-underline-animation">Cookie Policy</a></li>
             <li><a href="/links" className="hover-underline-animation">Ethical</a></li>
-            <li><a href="/links" className="hover-underline-animation">Need Help? Connect Us Instantly!</a></li>
+            <li><a href="/links" className="hover-underline-animation">Need Help? Chat with us</a></li>
             <li><a href="/links" className="hover-underline-animation">How to delete my account</a></li>
           </ul>
         </div>
