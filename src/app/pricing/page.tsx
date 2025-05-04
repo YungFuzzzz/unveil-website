@@ -35,7 +35,7 @@ export default function AboutPage() {
     {
       name: 'Day pass',
       price: '€1,99/day',
-      subtitle: 'Includes full city unlock and access to all tours and soundspots   for one day',
+      subtitle: 'Includes full city unlock and access to all tours and soundspots for one day',
       features: [
         'Full city unlocked',
         'All soundspots included',
