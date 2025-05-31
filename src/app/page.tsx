@@ -124,6 +124,8 @@ export default function Home() {
         </div>
       </nav>
 
+      
+
       {/* Mobile menu */}
       <AnimatePresence>
         {menuOpen && (
@@ -193,8 +195,7 @@ export default function Home() {
     preload="none"
     className="absolute top-0 left-0 w-full h-full object-cover"
   >
-    <source src="/introVideo.webm" type="video/webm" />
-    <source src="/introVideo.mp4" type="video/mp4" />
+    <source src="/LandingsPage.webm" type="video/webm" />
     <p>Je browser ondersteunt geen video.</p>
   </video>
 

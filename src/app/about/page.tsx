@@ -178,7 +178,7 @@ export default function AboutPage() {
       </p>
       <a
   href="mailto:team@unveil.be"
-  className="inline-block bg-[#5CD4FF] text-white font-bold py-4 px-10 rounded-lg hover:bg-white hover:text-black transition duration-300 shadow-lg hover:shadow-xl"
+  className="inline-block bg-[#5CD4FF] text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-black transition duration-300 shadow-lg hover:shadow-xl"
 >
   Connect with us
 </a>

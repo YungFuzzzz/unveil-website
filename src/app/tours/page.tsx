@@ -7,9 +7,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import L from 'leaflet';
 
-// Dynamic imports for react-leaflet
 const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), { ssr: false });
 const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), { ssr: false });
 const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), { ssr: false });
@@ -48,19 +46,12 @@ const tours = [
   },
 ];
 
-const customIcon = new L.Icon({
-  iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
-  iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
-});
+
 
 export default function ToursPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [customIcon, setCustomIcon] = useState<L.Icon | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -68,14 +59,32 @@ export default function ToursPage() {
   }, []);
 
   useEffect(() => {
+    if (!isClient) return;
+    import('leaflet').then(L => {
+      setCustomIcon(
+        new L.Icon({
+          iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
+          iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
+          shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
+          iconSize: [25, 41],
+          iconAnchor: [12, 41],
+          popupAnchor: [1, -34],
+          shadowSize: [41, 41],
+        })
+      );
+    });
+  }, [isClient]);
+
+  useEffect(() => {
+    if (!isClient) return;
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setMenuOpen(false);
     };
     window.addEventListener('keydown', handleEsc);
     return () => window.removeEventListener('keydown', handleEsc);
-  }, []);
+  }, [isClient]);
 
-  if (!isClient) return null;
+  if (!isClient || !customIcon) return null;
 
   return (
     <main className="min-h-screen bg-[#2f2f2f] text-white overflow-x-hidden">
@@ -97,6 +106,12 @@ export default function ToursPage() {
               ))}
             </ul>
           </div>
+                 {/* Desktop button */}
+          <div className="hidden md:block">
+            <button className="px-4 mr-10 py-2 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer">
+              Unveil app
+            </button>
+          </div>
           <div className="lg:hidden pr-4">
             <button onClick={() => setMenuOpen(true)} aria-label="Open Menu">
               <Menu size={28} />
@@ -104,6 +119,8 @@ export default function ToursPage() {
           </div>
         </div>
       </nav>
+
+      
 
       {/* Mobile Menu */}
       {menuOpen && (

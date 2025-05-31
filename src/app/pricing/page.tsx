@@ -115,7 +115,7 @@ export default function AboutPage() {
           </div>
           <div className="hidden md:block">
             <button className="px-4 mr-10 py-2 rounded-md font-bold text-white bg-[#5CD4FF] hover:bg-white hover:text-black transition-all duration-300 ease-in-out cursor-pointer">
-              Try for free
+              Unveil app
             </button>
           </div>
           <div className="md:hidden pr-4">
@@ -188,7 +188,7 @@ export default function AboutPage() {
       </AnimatePresence>
 
       {/* Pricing Section */}
-      <section className="px-4 py-27 md:py-32 bg-[#1f1f1f] text-white flex justify-center">
+      <section className="px-4 py-28 md:py-32 bg-[#1f1f1f] text-white flex justify-center">
         <div className="w-full max-w-6xl mx-auto text-center">
         <h2 className="text-5xl md:text-6xl font-extrabold text-white mb-8 leading-tight">
   Our plans
@@ -208,8 +208,10 @@ export default function AboutPage() {
               >
                 <div className="text-center pt-6">
                   <h3 className="text-2xl font-semibold mb-2">{plan.name}</h3>
-                  <p className="text-4xl font-extrabold text-[#5CD4FF] mb-1">{plan.price}</p>
-                  <p className="text-sm text-white font-normal mb-2">{plan.subtitle}</p>
+                    <p className="text-4xl font-extrabold text-[#5CD4FF] mb-2 whitespace-nowrap">
+                      {plan.price.replace(/\//g, ' / ')}
+                    </p>
+                  <p className="text-sm text-white font-normal mb-3">{plan.subtitle}</p>
                   {plan.badge && (
                     <span className="inline-block text-xs bg-[#333] text-[#5CD4FF] px-3 py-1 rounded-full font-medium mb-6">
                       {plan.badge}
