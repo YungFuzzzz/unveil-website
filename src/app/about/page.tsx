@@ -24,7 +24,7 @@ export default function AboutPage() {
   }, [menuOpen]);
 
   const navLinks = [
-    { name: 'Home', href: '/' },
+    { name: 'Home', href: '/home' },
     { name: 'About Us', href: '/about' },
     { name: 'Our Tours', href: '/tours' },
     { name: 'Pricing', href: '/pricing' },
@@ -37,7 +37,7 @@ export default function AboutPage() {
       <nav className="relative p-4 bg-[#252525] border-b border-[#333] z-50">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-          <Link href="/">
+          <Link href="/home">
   <Image
     src="/Logo.svg"
     alt="Logo"
@@ -241,6 +241,91 @@ export default function AboutPage() {
     </p>
   </div>
 </section>
+
+<footer className="w-full h-auto bg-black text-white px-6 md:px-18 py-2 md:py-6">
+
+    <div className="flex flex-col md:flex-row md:items-start md:gap-48 pt-10 md:pt-16">
+      
+      {/* Unveil beschrijving wrapper */}
+      <div className="flex flex-col space-y-6 items-start text-left mb-10 md:mb-0">
+        
+        {/* Logo */}
+<Image
+  src="/unveil-logo.svg"
+  alt="Unveil Logo Group"
+  width={160} // Dit is gelijk aan de breedte van w-40 (waarbij 1rem = 16px)
+  height={66} // Dit is gelijk aan de hoogte van md:w-66 (wat 16.5rem = 264px is)
+  className="w-40 md:w-66" // De class blijft behouden om styling toe te passen
+/>
+
+        {/* Beschrijving */}
+        <p className="max-w-sm pt-2">
+          Uncover the secrets of Mechelen. The ultimate way to sightsee and explore like a local!
+        </p>
+
+        {/* Download images */}
+        <div className="flex space-x-4 pt-2 justify-start">
+        <Image
+  src="/app-store.png"
+  alt="Download on the App Store"
+  width={120} // Pas dit aan aan hoe breed de afbeelding ongeveer moet zijn
+  height={48} // H-12 = 3rem = 48px
+  className="w-auto h-12"
+/>
+<Image
+  src="/play-store.png"
+  alt="Download on the Playstore"
+  width={120} // Pas dit aan aan hoe breed de afbeelding ongeveer moet zijn
+  height={48} // H-12 = 3rem = 48px
+  className="w-auto h-12"
+/>
+        </div>
+      </div>
+
+      {/* Rechter kolom met drie divs */}
+      <div className="flex flex-col md:flex-row md:space-x-39 space-y-10 md:space-y-0 items-start text-left w-full">
+        
+      <div className="flex flex-col space-y-2 md:space-y-4 md:mr-38">
+      <h3 className="font-bold mb-4">Navigation</h3>
+          <ul className="space-y-2">
+            <li><a href="/home" className="hover-underline-animation">Home</a></li>
+            <li><a href="/about" className="hover-underline-animation">About Us</a></li>
+            <li><a href="/tours" className="hover-underline-animation">Our Tours</a></li>
+            <li><a href="/pricing" className="hover-underline-animation">Pricing</a></li>
+            <li><a href="/contact" className="hover-underline-animation">Contact</a></li>
+          </ul>
+        </div>
+
+        <div className="flex flex-col space-y-2 md:space-y-4 md:mr-38">
+          <h3 className="font-bold mb-4">Quick Links</h3>
+          <ul className="space-y-2">
+            <li><a href="/links" className="hover-underline-animation">Legal Notice</a></li>
+            <li><a href="/links" className="hover-underline-animation">Privacy</a></li>
+            <li><a href="/links" className="hover-underline-animation">Cookie Policy</a></li>
+            <li><a href="/links" className="hover-underline-animation">Ethical</a></li>
+            <li><a href="/links" className="hover-underline-animation">Need Help? Chat with us</a></li>
+            <li><a href="/links" className="hover-underline-animation">How to delete my account</a></li>
+          </ul>
+        </div>
+
+        <div className="flex flex-col space-y-2 md:space-y-4 md:mr-38">
+          <h3 className="font-bold mb-4">Socials</h3>
+          <ul className="space-y-2">
+            <li><a href="https://www.instagram.com/unveil_mechelen/" target="_blank" rel="noopener noreferrer" className="hover-underline-animation">Instagram</a></li>
+            <li><a href="https://www.facebook.com/unveil.503510/" target="_blank" rel="noopener noreferrer" className="hover-underline-animation">Facebook</a></li>
+            <li><a href="https://www.tiktok.com/@team.unveil8" target="_blank" rel="noopener noreferrer" className="hover-underline-animation">TikTok</a></li>
+            <li><a href="https://www.linkedin.com/company/unveil-mechelen" target="_blank" rel="noopener noreferrer" className="hover-underline-animation">LinkedIn</a></li>
+            <li><a href="https://www.youtube.com/@Team-Unveil" target="_blank" rel="noopener noreferrer" className="hover-underline-animation">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div className="font-light text-center mt-26 pt-6 border-t border-white/10">
+  Unveil Thomas More Mechelen | @Team Unveil
+</div>
+
+  </footer>
 
 
 

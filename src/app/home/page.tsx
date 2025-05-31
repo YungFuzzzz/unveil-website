@@ -62,7 +62,7 @@ export default function Home() {
   };
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
+    { name: 'Home', href: '/home' },
     { name: 'About Us', href: '/about' },
     { name: 'Our Tours', href: '/tours' },
     { name: 'Pricing', href: '/pricing' },
@@ -77,7 +77,7 @@ export default function Home() {
       <nav className="relative p-4 bg-[#252525] border-b border-[#333] z-50">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-          <Link href="/">
+          <Link href="/home">
   <Image 
     src="/Logo.svg" 
     alt="Logo" 
@@ -123,7 +123,6 @@ export default function Home() {
           </div>
         </div>
       </nav>
-
       
 
       {/* Mobile menu */}
@@ -635,7 +634,7 @@ export default function Home() {
       <div className="flex flex-col space-y-2 md:space-y-4 md:mr-38">
       <h3 className="font-bold mb-4">Navigation</h3>
           <ul className="space-y-2">
-            <li><a href="#home" className="hover-underline-animation">Home</a></li>
+            <li><a href="/home" className="hover-underline-animation">Home</a></li>
             <li><a href="/about" className="hover-underline-animation">About Us</a></li>
             <li><a href="/tours" className="hover-underline-animation">Our Tours</a></li>
             <li><a href="/pricing" className="hover-underline-animation">Pricing</a></li>
